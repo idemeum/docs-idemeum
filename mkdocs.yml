@@ -1,0 +1,96 @@
+site_name: idemeum
+site_url: https://idemeum.com
+site_description: Passwordless and private digital identity platform
+copyright: Copyright 2021 idemeum
+extra_css:
+  - stylesheets/extra.css
+repo_url: https://github.com/orgs/idemeum/
+edit_uri: ""
+docs_dir: docs
+
+theme:
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    primary: white
+    accent: deep orange
+  name: material
+  custom_dir: material
+  language: en
+  font:
+    text: Ubuntu
+    code: IBM Plex Mono
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    - navigation.expand
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - attr_list
+  - admonition
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.superfences
+  - abbr
+  - def_list
+  - footnotes
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+nav:
+  - Overview:
+    - What is idemeum?: index.md
+    - How it works:
+       - One click login: overview/oneclick.md
+       - Biometric login: overview/biometric.md
+       - Login with idemeum app: overview/loginapp.md
+    - Architecture:
+       - idemeum architecture: overview/architecture.md
+       - Security and privacy: overview/security.md
+  - SDK reference:
+    - Overview: reference/sdkoverview.md
+    - Javascript:
+       - How to guide: reference/howtojs.md
+       - Sample app: reference/appjs.md
+    - iOS:
+       - How to guide: reference/howtoios.md
+       - Sample app: reference/appios.md
+    - Android:
+       - How to guide: reference/howtoandroid.md
+       - Sample app: reference/appandroid.md
+  - Integrations:
+    - Enterprise SSO: 
+       - Overview: sso-overview.md
+       - Azure AD (B2B): azuread.md
+       - Worspace ONE Access: ws1access.md
+       - Okta: okta.md
+       - Google Cloud Identity: google.md
+  - Blog 📘: https://blog.idemeum.com
+  - Get help❓: gethelp.md
+
+plugins:
+  - search
+
+google_analytics:
+  - G-28BFDTM9SP
+  - auto
+
+extra:
+  social:
+    - icon: fontawesome/brands/youtube
+      link: https://youtube.com/channel/UCyPMNEEfPuRlcWVmGKGb6ug
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/idemeum/
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/idemeum
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/idemeum
+
+

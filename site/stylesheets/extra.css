@@ -1,0 +1,11 @@
+:root {
+  --md-primary-fg-color:        #3E79F1;
+}
+
+:root>* {
+
+  --md-footer-bg-color:         #172b4d;
+
+}
+
+.md-button--black{color:black; background-color:black; border-color:black; text-align: center;}
