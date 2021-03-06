@@ -6,7 +6,8 @@ extra_css:
   - stylesheets/extra.css
 repo_url: https://github.com/orgs/idemeum/
 edit_uri: ""
-docs_dir: docs
+docs_dir: docs-source
+site_dir: docs
 
 theme:
   icon:
