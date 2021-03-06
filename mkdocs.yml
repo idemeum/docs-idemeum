@@ -21,8 +21,8 @@ theme:
   font:
     text: Ubuntu
     code: IBM Plex Mono
-  logo: assets/logo.png
-  favicon: assets/logo.png
+  logo: /assets/logo.png
+  favicon: /assets/logo.png
   features:
     - navigation.instant
     - navigation.sections
