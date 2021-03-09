@@ -54,7 +54,8 @@ nav:
        - Login with idemeum app: overview/loginapp.md
     - Architecture:
        - idemeum architecture: overview/architecture.md
-       - Security and privacy: overview/security.md
+       - On privacy: overview/privacy.md
+       - On security: overview/security.md
   - SDK reference:
     - Overview: reference/sdkoverview.md
     - Javascript:
