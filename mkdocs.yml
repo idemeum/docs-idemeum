@@ -13,14 +13,26 @@ theme:
   icon:
     repo: fontawesome/brands/github
   palette:
-    primary: white
-    accent: deep orange
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: yellow
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: yellow
+      accent: blue
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
   name: material
   custom_dir: material
   language: en
   font:
-    text: Ubuntu
-    code: IBM Plex Mono
+    text: Inter
+    code: Ubuntu
   logo: assets/logo.svg
   favicon: assets/logo.svg
   features:
@@ -48,10 +60,11 @@ markdown_extensions:
 nav:
   - Overview:
     - What is idemeum?: index.md
-    - How it works:
-       - One click login: overview/oneclick.md
+    - Login flows:
+       - One-click login: overview/oneclick.md
        - Biometric login: overview/biometric.md
-       - Login with idemeum app: overview/loginapp.md
+       - idemeum app login: overview/loginapp.md
+       - Login flows comparison: overview/flowcomparison.md
     - Architecture:
        - idemeum architecture: overview/architecture.md
        - On privacy: overview/privacy.md
@@ -74,8 +87,8 @@ nav:
        - Worspace ONE Access: ws1access.md
        - Okta: okta.md
        - Google Cloud Identity: google.md
-  - Blog 📘: https://blog.idemeum.com
-  - Get help❓: gethelp.md
+  - Blog: https://blog.idemeum.com
+  - Help: gethelp.md
 
 plugins:
   - search
@@ -94,5 +107,6 @@ extra:
       link: https://www.facebook.com/idemeum
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/idemeum
-
+    - icon: fontawesome/brands/medium
+      link: https://medium.com/@nikolay.poturnak
 
