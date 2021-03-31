@@ -74,6 +74,17 @@
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
       {% endif %}
+	  
+	  <!-- Global site tag (gtag.js) - Google Analytics -->
+	  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KYWFKQ6P7"></script>
+	  <script>
+	    window.dataLayer = window.dataLayer || [];
+	    function gtag(){dataLayer.push(arguments);}
+	    gtag('js', new Date());
+
+	    gtag('config', 'G-4KYWFKQ6P7');
+	  </script>
+	  
     {% endblock %}
     {% block extrahead %}{% endblock %}
   </head>
