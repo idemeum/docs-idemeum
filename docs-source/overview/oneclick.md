@@ -9,13 +9,13 @@ Behind the scenes one-click login is using **JSON Web Tokens (JWT)** to authenti
 !!! Abstract "What is JWT?"
 	[JSON Web Token (JWT)](https://en.wikipedia.org/wiki/JSON_Web_Token) is an open standard ([RFC 7519](https://tools.ietf.org/html/rfc7519)) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed.
 
-Once the user is authenticated, idemeum returns a JSON Web Token that will be saved locally in the user's browser as a cookie. Each subsequent request will include the JWT, allowing the user to access any application that supports idemeum passwordless login. JWT enables users to **Single Sign-On** across applications - it provides small overhead and can be used across domains.
+Users register by verifying ownership of an email address with a One Time Code. Once the user is authenticated, idemeum returns a JSON Web Token that will be saved locally in the user's browser as a cookie. Each subsequent request will include the JWT, allowing the user to access any application that supports idemeum passwordless login. JWT enables users to **Single Sign-On** across applications - it provides small overhead and can be used across domains.
 
 This is a stateless authentication mechanism as the user state is never saved in the idemeum backend. JWT points to a [DID](https://www.w3.org/TR/did-core/), which is unique for each user, and does not include **any** identity information. After the user validates his identity and presents his JWT to idemeum backend, she can access identity claims and privately share with the target application.
 
 [More about security and privacy](https://blog.idemeum.com/idemeum-keeps-identity-secure-and-private/){ .md-button }
 
-## User lifecycle
+## User identity lifecycle
 
 1. When a user is logging into an application with idemeum passwordless login for the first time, she will need to go through **registration** process.
 
@@ -45,15 +45,6 @@ Once the user completes the registration, the authentication step is very simple
 
 ![One-click authentication](/assets/one-click/auth.png)
 
+## Platform support
 
-
-
-
-
-
-
-
-
-
-
-
+idemeum supports one-click login flow across desktop and mobile. 

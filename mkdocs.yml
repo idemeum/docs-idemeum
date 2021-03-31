@@ -40,6 +40,7 @@ theme:
     - navigation.sections
     - navigation.tabs
     - navigation.expand
+    - navigation.top
 
 markdown_extensions:
   - pymdownx.emoji:
@@ -56,6 +57,8 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
+  - toc:
+      permalink: true
 
 nav:
   - Overview:
