@@ -83,7 +83,7 @@
         <aside class="md-announce">
           <div class="md-announce__inner md-grid md-typeset">
             
-			Launching soon 🚀. <a href="https://idemeum.com/contact>">Contact us</a> for early access. 
+			Launching soon 🚀. <a href="https://idemeum.com/contact">Contact us</a> for early access. 
 			
           </div>
         </aside>
@@ -423,11 +423,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#user-lifecycle" class="md-nav__link">
-    User lifecycle
+  <a href="#user-identity-lifecycle" class="md-nav__link">
+    User identity lifecycle
   </a>
   
-    <nav class="md-nav" aria-label="User lifecycle">
+    <nav class="md-nav" aria-label="User identity lifecycle">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -446,6 +446,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-support" class="md-nav__link">
+    Platform support
+  </a>
   
 </li>
       
@@ -952,11 +959,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#user-lifecycle" class="md-nav__link">
-    User lifecycle
+  <a href="#user-identity-lifecycle" class="md-nav__link">
+    User identity lifecycle
   </a>
   
-    <nav class="md-nav" aria-label="User lifecycle">
+    <nav class="md-nav" aria-label="User identity lifecycle">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -978,6 +985,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#platform-support" class="md-nav__link">
+    Platform support
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -991,18 +1005,18 @@
               
                 
                 
-                <h1 id="one-click-login">One-Click Login</h1>
+                <h1 id="one-click-login">One-Click Login<a class="headerlink" href="#one-click-login" title="Permanent link">&para;</a></h1>
 <p><strong>One-click login</strong> is the simplest and most intuitive authentication flow for your users. It introduces very little friction, as all users need to do is to click a button to login. </p>
-<h2 id="how-one-click-works">How One-Click works</h2>
+<h2 id="how-one-click-works">How One-Click works<a class="headerlink" href="#how-one-click-works" title="Permanent link">&para;</a></h2>
 <p>Behind the scenes one-click login is using <strong>JSON Web Tokens (JWT)</strong> to authenticate users. </p>
 <div class="admonition abstract">
 <p class="admonition-title">What is JWT?</p>
 <p><a href="https://en.wikipedia.org/wiki/JSON_Web_Token">JSON Web Token (JWT)</a> is an open standard (<a href="https://tools.ietf.org/html/rfc7519">RFC 7519</a>) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed.</p>
 </div>
-<p>Once the user is authenticated, idemeum returns a JSON Web Token that will be saved locally in the user's browser as a cookie. Each subsequent request will include the JWT, allowing the user to access any application that supports idemeum passwordless login. JWT enables users to <strong>Single Sign-On</strong> across applications - it provides small overhead and can be used across domains.</p>
+<p>Users register by verifying ownership of an email address with a One Time Code. Once the user is authenticated, idemeum returns a JSON Web Token that will be saved locally in the user's browser as a cookie. Each subsequent request will include the JWT, allowing the user to access any application that supports idemeum passwordless login. JWT enables users to <strong>Single Sign-On</strong> across applications - it provides small overhead and can be used across domains.</p>
 <p>This is a stateless authentication mechanism as the user state is never saved in the idemeum backend. JWT points to a <a href="https://www.w3.org/TR/did-core/">DID</a>, which is unique for each user, and does not include <strong>any</strong> identity information. After the user validates his identity and presents his JWT to idemeum backend, she can access identity claims and privately share with the target application.</p>
 <p><a class="md-button" href="https://blog.idemeum.com/idemeum-keeps-identity-secure-and-private/">More about security and privacy</a></p>
-<h2 id="user-lifecycle">User lifecycle</h2>
+<h2 id="user-identity-lifecycle">User identity lifecycle<a class="headerlink" href="#user-identity-lifecycle" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>When a user is logging into an application with idemeum passwordless login for the first time, she will need to go through <strong>registration</strong> process.</p>
@@ -1012,7 +1026,7 @@
 </li>
 </ol>
 <p>Let's get deeper into each of the flows. </p>
-<h3 id="1-registration">1. Registration</h3>
+<h3 id="1-registration">1. Registration<a class="headerlink" href="#1-registration" title="Permanent link">&para;</a></h3>
 <p>User registration is very simple - <strong>it requires validating the ownership of an email address with the one-time code.</strong></p>
 <p>When user logs in to your application, he is presented with a passwordless login form. Upon providing an email address, idemeum will send a <strong>one-time code</strong> to users' inbox. That code needs to be typed back in order to prove email ownership. Once registration is complete, idemeum user account is created, Decentralized Identifier (DID) is assigned to the user, and JWT token is saved as a cookie in the user's browser. User identity claims are encrypted by the user generated private key and are stored in a dedicated HSM protected area of idemeum cloud. Only users have access to their identity data. </p>
 <p><img alt="One-click registration" src="/assets/one-click/flow.png" /></p>
@@ -1025,9 +1039,11 @@
 <li>idemeum session is expired and user needs to prove email ownership again</li>
 </ol>
 </div>
-<h3 id="2-authentication">2. Authentication</h3>
+<h3 id="2-authentication">2. Authentication<a class="headerlink" href="#2-authentication" title="Permanent link">&para;</a></h3>
 <p>Once the user completes the registration, the authentication step is very simple. Click a button, confirm the release of information, and you are in. As idemeum is a private IDP, users will be able to Single-Sign On across applications and domains. </p>
 <p><img alt="One-click authentication" src="/assets/one-click/auth.png" /></p>
+<h2 id="platform-support">Platform support<a class="headerlink" href="#platform-support" title="Permanent link">&para;</a></h2>
+<p>idemeum supports one-click login flow across desktop and mobile. </p>
                 
               
               
@@ -1038,6 +1054,10 @@
             </article>
           </div>
         </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
         
       </main>
       
@@ -1149,7 +1169,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.tabs", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.tabs", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d892486b.min.js"></script>

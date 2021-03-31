@@ -83,7 +83,7 @@
         <aside class="md-announce">
           <div class="md-announce__inner md-grid md-typeset">
             
-			Launching soon 🚀. <a href="https://idemeum.com/contact>">Contact us</a> for early access. 
+			Launching soon 🚀. <a href="https://idemeum.com/contact">Contact us</a> for early access. 
 			
           </div>
         </aside>
@@ -1073,9 +1073,9 @@
               
                 
                 
-                <h1 id="idemeum-makes-digital-identity-secure">idemeum makes digital identity secure <img alt="🛡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6e1.svg" title=":shield:" /></h1>
+                <h1 id="idemeum-makes-digital-identity-secure">idemeum makes digital identity secure <img alt="🛡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6e1.svg" title=":shield:" /><a class="headerlink" href="#idemeum-makes-digital-identity-secure" title="Permanent link">&para;</a></h1>
 <p>idemeum offers three types of login: <strong>one-click login</strong>, <strong>login with biometrics</strong>, and <strong>login with idemeum app</strong>. Let's dig deeper into how each flow is secured with Privacy-aware Identity Management Architecture. </p>
-<h2 id="one-click-or-biometric-login">One-click or biometric login</h2>
+<h2 id="one-click-or-biometric-login">One-click or biometric login<a class="headerlink" href="#one-click-or-biometric-login" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="/assets/security/architecture1.png" /></p>
 <p>There are four major architectural components that enable idemeum login. Each component carries a certain role with a number of security protections built-in. </p>
 <ol>
@@ -1085,10 +1085,10 @@
 <li><strong>Key Management Service (KMS)</strong> 🔑 - AWS managed service that makes it easy to create and control idemeum master key (CMK), and data encryption keys (DEK) used to encrypt user claims. AWS KMS CMKs are protected by hardware security modules (HSMs) that are validated by the FIPS 140-2 Cryptographic Module Validation Program.</li>
 </ol>
 <p>Let's now get deep into each of the components to get the details about security controls.</p>
-<h3 id="client-side-sdk">Client-side SDK</h3>
+<h3 id="client-side-sdk">Client-side SDK<a class="headerlink" href="#client-side-sdk" title="Permanent link">&para;</a></h3>
 <p>When integrating with idemeum each application gets CLIENT_ID assigned so that it can interact with idemeum backend. Since CLIENT_ID is used in the front-end code, it may be exposed. Therefore, to prevent malicious applications impersonation and phishing, application owners can set the <strong>Allowed Origins</strong> (whitelisted domains) that are allowed to use the CLIENT_ID.</p>
 <p>SKD also offers application developers to validate OIDC ID token in two ways: <strong>front-end validation</strong> (in SDK code) or <strong>redirect to endpoint</strong> (provided by application developer to point to the backend endpoint). Token validation verifies standard claims like issuer, audience, expiration, issue time. It also validates the signature of the ID Token according to JWS using the algorithm specified in the JWT alg Header Parameter. The nonce value is also checked to mitigate replay attack.</p>
-<h3 id="web-client">Web client</h3>
+<h3 id="web-client">Web client<a class="headerlink" href="#web-client" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Secure login strongbox</strong> - login flow is implemented in a dedicated strongbox that is protected by short-term challenge and browser context (fingerprint). This prevents any part of the flow to be executed outside of the strongbox and mitigates phishing and replay attacks. The fingerprint is also associated with the DID JWT and hence protects against DID cookie stealing and replay attack.</li>
 <li><strong>Signed and Encrypted DID JWT cookie</strong> - authenticated user session is represented as a DID JWT and saved as a cookie in the browser. This JWT is signed and encrypted to protect the integrity and confidentiality of the users' DID.</li>
@@ -1096,22 +1096,22 @@
 <li><strong>Encrypted message and algorithm suite</strong> - users' claims are packaged into a portable formatted data structure called encrypted message, which includes encrypted data along with encrypted copies of the DEK keys, the algorithm ID, and an encryption context and a message signature. Encrypted message is securely persisted in the cloud. The idemeum cloud does not have access control to decrypt the data keys. The default algorithm suite is AES-GCM with an HMAC-based extract-and-expand key derivation function (HKDF), Elliptic Curve Digital Signature Algorithm (ECDSA) signing, and a 256-bit encryption key. </li>
 <li><strong>Authenticated encryption with additional data (AEAD)</strong> - non-secret data that is provided to encryption and decryption operations to add an additional integrity and authenticity check on the encrypted data. Typically, the decrypt operation fails if the AAD (additional authenticated data) provided to the encrypt operation does not match the AAD provided to the decrypt operation.</li>
 </ol>
-<h3 id="identity-provider-idp">Identity Provider (IDP)</h3>
+<h3 id="identity-provider-idp">Identity Provider (IDP)<a class="headerlink" href="#identity-provider-idp" title="Permanent link">&para;</a></h3>
 <p>The idemeum IDP is responsible for authenticating user and requesting temporary, limited-privilege credentials from the AWS Security Token Service (AWS STS). This is done to create and provide trusted users with temporary security credentials that can control access to key management service. Access to key management service is required to encrypt and decrypt user claims by the encryption SDK in the idemeum web client as explained in the previous section. </p>
 <p>To use idemeum IDP, the first thing we do is to create an IAM identity provider entity to establish a trust relationship between the AWS account and the idemeum IDP.  The trust is established using SAML 2.0 standards. At login time, the idemeum IDP creates a SAML assertion (as part of the authentication response) that is used to get the temporary security credentials from AWS STS. These credentials are generated dynamically when requested and are limited-privilege and short-term, as the name implies. </p>
-<h3 id="key-management-service">Key management service 🔑</h3>
+<h3 id="key-management-service">Key management service 🔑<a class="headerlink" href="#key-management-service" title="Permanent link">&para;</a></h3>
 <p>The data in AWS KMS consists of idemeum customer master key (CMK) and the encryption key material they represent. This key material exists in plaintext only within AWS KMS hardware security modules (HSMs) and only when in use.</p>
 <p>AWS KMS generates key material for idemeum customer master key (CMK) in FIPS 140-2 Level 2–compliant hardware security modules (HSMs). When not in use, key material is encrypted by an HSM and written to durable, persistent storage. The key material for CMK and the encryption keys that protect the key material never leave the HSMs in plaintext form.</p>
 <p>The CMK is used by the encryption SDK to encrypt and decrypt data encryption keys (DEK's) that are used to encrypt and decrypt user claims. Since all the encryption operations happen in the web client, idemeum cloud does not have the appropriate permissions to decrypt the DEK’s</p>
 <p>The access to the CMK is managed using key policy. The key policy does specify a specific role that should be assumed by temporary credentials in order to access the CMK. Access to CMK is also controlled by ABAC (attribute-based access control) and policy conditions that should be met before performing encryption operations. </p>
-<h2 id="login-with-idemeum-app">Login with idemeum app</h2>
+<h2 id="login-with-idemeum-app">Login with idemeum app<a class="headerlink" href="#login-with-idemeum-app" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="/assets/security/architecture2.png" /></p>
 <p>We created idemeum app (decentralized, verified, mobile identity) with the purpose to enable people to own and control their digital identity 100%. idemeum app is decentralized, meaning no user information (<strong>correct, absolutely no personally identifiable information (PII)</strong>) is persisted in the cloud when idemeum app is set up. All identity claims are securely stored on a mobile device. </p>
-<h3 id="decentralized-identifier-did">Decentralized Identifier (DID)</h3>
+<h3 id="decentralized-identifier-did">Decentralized Identifier (DID)<a class="headerlink" href="#decentralized-identifier-did" title="Permanent link">&para;</a></h3>
 <p>In the idemeum app user DID is secured using public-key cryptography, where DID private key is managed in the secure hardware, such as Trusted Execution Environment (TEE) and dedicated Hardware Security Module (HSM). </p>
-<h3 id="biometric-support">Biometric Support</h3>
+<h3 id="biometric-support">Biometric Support<a class="headerlink" href="#biometric-support" title="Permanent link">&para;</a></h3>
 <p>idemeum app uses FIDO2 standards for supporting platform and roaming authenticators for user registration and authentication. Biometric validation is enforced when user logins into any service provider and also when managing the user cabinet.</p>
-<h3 id="verified-and-encrypted-claims">Verified and Encrypted Claims</h3>
+<h3 id="verified-and-encrypted-claims">Verified and Encrypted Claims<a class="headerlink" href="#verified-and-encrypted-claims" title="Permanent link">&para;</a></h3>
 <p>Users manage their identity claims in the idemeum app. The claims (first name, last name, address, email, phone, and others) are identity proofed to ensure that claimed identity matches the actual identity. The claims are secured using symmetric cryptography where key material is managed in the TEE and HSM.</p>
                 
               
@@ -1123,6 +1123,10 @@
             </article>
           </div>
         </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
         
       </main>
       
@@ -1234,7 +1238,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.tabs", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.tabs", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d892486b.min.js"></script>

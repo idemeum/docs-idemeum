@@ -83,7 +83,7 @@
         <aside class="md-announce">
           <div class="md-announce__inner md-grid md-typeset">
             
-			Launching soon 🚀. <a href="https://idemeum.com/contact>">Contact us</a> for early access. 
+			Launching soon 🚀. <a href="https://idemeum.com/contact">Contact us</a> for early access. 
 			
           </div>
         </aside>
@@ -1073,11 +1073,11 @@
               
                 
                 
-                <h1 id="integrate-idemeum-with-okta">Integrate idemeum with Okta</h1>
+                <h1 id="integrate-idemeum-with-okta">Integrate idemeum with Okta<a class="headerlink" href="#integrate-idemeum-with-okta" title="Permanent link">&para;</a></h1>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class='embed-container'><iframe src='https://www.youtube.com/embed/6_zlInkDaSU?rel=0&modestbranding=1&autohide=1' frameborder='0' allowfullscreen></iframe></div>
 
-<h2 id="how-can-idemeum-help-secure-okta-deployments">How can idemeum help secure Okta deployments?</h2>
+<h2 id="how-can-idemeum-help-secure-okta-deployments">How can idemeum help secure Okta deployments?<a class="headerlink" href="#how-can-idemeum-help-secure-okta-deployments" title="Permanent link">&para;</a></h2>
 <p>idemeum integrates with <a href="https://www.okta.com/">Okta</a> directly over SAML and provides the following services:</p>
 <table>
 <thead>
@@ -1097,7 +1097,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="how-does-the-integration-work">How does the integration work?</h2>
+<h2 id="how-does-the-integration-work">How does the integration work?<a class="headerlink" href="#how-does-the-integration-work" title="Permanent link">&para;</a></h2>
 <p>idemeum integrates with Okta in minutes. As idemeum is decentralized, there is no need to synchronize users to idemeum from Active Directory, or deploy any additional servers and connectors. Simply federate your Okta tenant with idemeum over SAML protocol.</p>
 <p><img alt="" src="../assets/okta/okta_diagram.png" /></p>
 <p>In the diagram above, we see the deployment where Okta is deployed as a primary IDP and all applications are federated directly with Okta. When user is trying to authenticate to any corporate application, the sign in request is sent first to Okta, and is then subsequently redirected to idemeum. idemeum performs Passwordless Multi-Factor authentication and returns necessary user information to Okta, which in turn forwards that user information to federated application. As a result users can access application without any passwords.</p>
@@ -1105,7 +1105,7 @@
 <p class="admonition-title">idemeum differentiation</p>
 <p>The key difference to note here is that you can configure idemeum to release not just email, but also first name and last name for employee. When all these claims are processed for authentication, the match is done not just with email but with verified ID document information. Therefore, every login becomes trusted.</p>
 </div>
-<h2 id="integrate-idemeum-with-okta_1">Integrate idemeum with Okta</h2>
+<h2 id="integrate-idemeum-with-okta_1">Integrate idemeum with Okta<a class="headerlink" href="#integrate-idemeum-with-okta_1" title="Permanent link">&para;</a></h2>
 <p>We are going to go through simple four steps to integrate idemeum with your Okta identity environment.</p>
 <ol>
 <li>Request idemeum tenant</li>
@@ -1113,7 +1113,7 @@
 <li>Configure Okta for federation</li>
 <li>Test user sign-in</li>
 </ol>
-<h3 id="1-request-idemeum-tenant">1. 🤝 Request idemeum tenant</h3>
+<h3 id="1-request-idemeum-tenant">1. 🤝 Request idemeum tenant<a class="headerlink" href="#1-request-idemeum-tenant" title="Permanent link">&para;</a></h3>
 <p>👉 As a first step, reach out to idemeum team at <strong><a href="mailto:support@idemeum.com">support@idemeum.com</a></strong> with the request to provision idemeum tenant.</p>
 <p>Please, let us know that you will be integrating idemeum with Okta and whether you want to use verified login or not.</p>
 <p>We will need several things from you:</p>
@@ -1138,7 +1138,7 @@
 <p class="admonition-title">Tip</p>
 <p>When we provision idemeum tenant for you, your tenant's metadata XML file will be accessible using this link <code>https://&lt;your tenant name&gt;/api/saml/metadata/idp.xml</code>. All configuration parameters listed above can be extracted from this SAML metadata file.</p>
 </div>
-<h3 id="2-set-up-verified-login">2. ✔️ Set up verified login</h3>
+<h3 id="2-set-up-verified-login">2. ✔️ Set up verified login<a class="headerlink" href="#2-set-up-verified-login" title="Permanent link">&para;</a></h3>
 <p>This step is optional. You can login your users and match the account using only email address. This is what most of the commercial identity solutions do today. However, idemeum offers an opportunity to increase identity trust and login your users with not just email, but a combination of <strong>email + firstName + lastName</strong>.</p>
 <p>To make it work, we will need to create a custom attribute for Okta users, say <strong>verifiedIdentity</strong> and populate it with a combination of email + firstName + lastName. When idemeum will return verified user claims, Okta will match them against this custom attribute.</p>
 <p>In this case we are going to be working with Active Directory users that you are synchronizing to Okta tenant.</p>
@@ -1166,8 +1166,8 @@
 <p class="admonition-title">Tip</p>
 <p>At this point you will need to force sync users from Active Directory to make sure custom attributes get populated for all your existing or new users.</p>
 </div>
-<h3 id="3-configure-okta-for-federation">3. ⚙️ Configure Okta for federation</h3>
-<h4 id="configure-3rd-party-idp">Configure 3rd party IDP</h4>
+<h3 id="3-configure-okta-for-federation">3. ⚙️ Configure Okta for federation<a class="headerlink" href="#3-configure-okta-for-federation" title="Permanent link">&para;</a></h3>
+<h4 id="configure-3rd-party-idp">Configure 3rd party IDP<a class="headerlink" href="#configure-3rd-party-idp" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Navigate to <code>Security</code> -&gt; <code>Identity Providers</code> -&gt; <code>Add Identity Provider</code> -&gt; <code>Add SAML 2.0 IDP</code>
   <img alt="" src="../assets/okta/idp.png" /></li>
@@ -1197,7 +1197,7 @@
   <img alt="" src="../assets/okta/metadata.png" /></li>
 </ol>
 <p>At this point you created identity provider in Okta to federate all authentication requests with idemeum. As a next step you need to apply this identity provider in Okta Routing Rules.</p>
-<h4 id="configure-routing-rule">Configure routing rule</h4>
+<h4 id="configure-routing-rule">Configure routing rule<a class="headerlink" href="#configure-routing-rule" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>Navigate to <code>Security</code> -&gt; <code>Identity Providers</code> -&gt; <code>Routing Rules</code>. In this case we are going to create a new routing rule for passwordless authentication.
@@ -1217,7 +1217,7 @@
   <img alt="" src="../assets/okta/customize.png" /></p>
 </li>
 </ol>
-<h3 id="4-test-user-sign-in">4. 🧪 Test user sign-in</h3>
+<h3 id="4-test-user-sign-in">4. 🧪 Test user sign-in<a class="headerlink" href="#4-test-user-sign-in" title="Permanent link">&para;</a></h3>
 <p>Once you are done with configuration you can quickly test the user sign-in flow.</p>
 <ol>
 <li>
@@ -1254,6 +1254,10 @@
             </article>
           </div>
         </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
         
       </main>
       
@@ -1365,7 +1369,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.tabs", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.tabs", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.d892486b.min.js"></script>

@@ -83,7 +83,7 @@
         <aside class="md-announce">
           <div class="md-announce__inner md-grid md-typeset">
             
-			Launching soon 🚀. <a href="https://idemeum.com/contact>">Contact us</a> for early access. 
+			Launching soon 🚀. <a href="https://idemeum.com/contact">Contact us</a> for early access. 
 			
           </div>
         </aside>
@@ -1033,11 +1033,11 @@
               
                 
                 
-                <h1 id="integrate-idemeum-with-azure-ad-b2b"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 32h214.6v214.6H0V32zm233.4 0H448v214.6H233.4V32zM0 265.4h214.6V480H0V265.4zm233.4 0H448V480H233.4V265.4z"/></svg></span> Integrate idemeum with Azure AD (B2B)</h1>
+                <h1 id="integrate-idemeum-with-azure-ad-b2b"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 32h214.6v214.6H0V32zm233.4 0H448v214.6H233.4V32zM0 265.4h214.6V480H0V265.4zm233.4 0H448V480H233.4V265.4z"/></svg></span> Integrate idemeum with Azure AD (B2B)<a class="headerlink" href="#integrate-idemeum-with-azure-ad-b2b" title="Permanent link">&para;</a></h1>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class='embed-container'><iframe src='https://www.youtube.com/embed/1wWA4ic2uAM?rel=0&modestbranding=1&autohide=1' frameborder='0' allowfullscreen></iframe></div>
 
-<h2 id="how-can-idemeum-help-secure-o365">How can idemeum help secure O365?</h2>
+<h2 id="how-can-idemeum-help-secure-o365">How can idemeum help secure O365?<a class="headerlink" href="#how-can-idemeum-help-secure-o365" title="Permanent link">&para;</a></h2>
 <p>idemeum integrates with <a href="https://azure.microsoft.com/en-us/services/active-directory/">Azure Active Directory (AAD)</a> directly over SAML and provides the following services:</p>
 <table>
 <thead>
@@ -1053,7 +1053,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="how-is-o365-deployed">How is O365 deployed?</h2>
+<h2 id="how-is-o365-deployed">How is O365 deployed?<a class="headerlink" href="#how-is-o365-deployed" title="Permanent link">&para;</a></h2>
 <p>O365 and Azure Active Directory (AAD) can be implemented with various <a href="https://docs.microsoft.com/en-us/microsoft-365/enterprise/about-microsoft-365-identity?view=o365-worldwide">deployment models</a>.</p>
 <table>
 <thead>
@@ -1073,10 +1073,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="how-is-idemeum-integrated-with-o365">How is idemeum integrated with O365?</h2>
+<h2 id="how-is-idemeum-integrated-with-o365">How is idemeum integrated with O365?<a class="headerlink" href="#how-is-idemeum-integrated-with-o365" title="Permanent link">&para;</a></h2>
 <p>idemeum can be federated directly with AAD using SAML protocol. When federating directly with Azure AD, idemeum can support <strong>cloud only</strong> as well as <strong>hybrid (password sync and pass-through)</strong> models.</p>
 <p><img alt="" src="../assets/azuread/deployment.png" /></p>
-<h2 id="integrate-idemeum-with-azure-ad">Integrate idemeum with Azure AD</h2>
+<h2 id="integrate-idemeum-with-azure-ad">Integrate idemeum with Azure AD<a class="headerlink" href="#integrate-idemeum-with-azure-ad" title="Permanent link">&para;</a></h2>
 <p>We are going to go through simple three steps to integrate idemeum with your Microsoft identity environment.</p>
 <ol>
 <li>Request idemeum tenant</li>
@@ -1084,7 +1084,7 @@
 <li>Test user sign-in</li>
 </ol>
 <p>All additional Microsoft documentation and useful links can be found in <a href="#fn:1">footnotes</a>.</p>
-<h3 id="1-request-idemeum-tenant">⚙️ 1. Request idemeum tenant</h3>
+<h3 id="1-request-idemeum-tenant">⚙️ 1. Request idemeum tenant<a class="headerlink" href="#1-request-idemeum-tenant" title="Permanent link">&para;</a></h3>
 <p>As a first step, reach out to idemeum team at <a href="mailto:support@idemeum.com">support@idemeum.com</a> with the request to provision idemeum tenant. Please, let us know that you will be integrating idemeum with Azure AD.</p>
 <p>We will need several things from you:</p>
 <ol>
@@ -1106,7 +1106,7 @@
 <p class="admonition-title">Tip</p>
 <p>You can always get this and additional information from your SAML metadata XML file. You can access this information by using the following link <code>https://&lt;your tenant name&gt;/api/saml/metadata/idp.xml</code>. Replace <ins>[your tenant name]</ins> with your actual tenant name that we will provision for you.</p>
 </div>
-<h3 id="2-configure-azure-ad-for-federation">🧑🏿‍🤝‍🧑🏼 2. Configure Azure AD for federation</h3>
+<h3 id="2-configure-azure-ad-for-federation">🧑🏿‍🤝‍🧑🏼 2. Configure Azure AD for federation<a class="headerlink" href="#2-configure-azure-ad-for-federation" title="Permanent link">&para;</a></h3>
 <p>After signing up for Office 365, the only domain associated with your account is the <code>onmicrosoft.com</code> subdomain chosen during registration (for example, <code>contoso.onmicrosoft.com</code>). To allow users to SSO to Azure AD and Office 365, it is <strong>recommended</strong> to have another domain added to the environment. If you already have such domain added and verified, you can always use that.</p>
 <div class="admonition warning">
 <p class="admonition-title">Make sure you have admin account with another domain</p>
@@ -1171,7 +1171,7 @@
 </td></tr></table>
   <img alt="" src="../assets/azuread/verifysettings.png" /></li>
 </ol>
-<h3 id="3-test-user-sign-in">🧪 3. Test user sign in</h3>
+<h3 id="3-test-user-sign-in">🧪 3. Test user sign in<a class="headerlink" href="#3-test-user-sign-in" title="Permanent link">&para;</a></h3>
 <p>Once you are done with configuration you can quickly test the user sign-in flow.</p>
 <ol>
 <li>Open incognito browser window and navigate to <a href="https://portal.office.com"><code>portal.office.com</code></a>
@@ -1209,6 +1209,10 @@
             </article>
           </div>
         </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
         
       </main>
       
@@ -1320,7 +1324,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.tabs", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.tabs", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.d892486b.min.js"></script>
