@@ -1,4 +1,4 @@
-# Biometric login
+# Biometric Login
 
 **Biometric login** adds additional level of security by requiring users to authenticate with biometrics leveraging built-in sensors or external authenticators (such as Yubikey). 
 

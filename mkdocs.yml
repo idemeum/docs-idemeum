@@ -72,7 +72,7 @@ nav:
        - idemeum architecture: overview/architecture.md
        - On privacy: overview/privacy.md
        - On security: overview/security.md
-  - SDK reference:
+  - SDK Reference:
     - Overview: reference/sdkoverview.md
     - Javascript:
        - How to guide: reference/howtojs.md
