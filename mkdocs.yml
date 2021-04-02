@@ -69,9 +69,9 @@ nav:
        - idemeum app login: overview/loginapp.md
        - Login flows comparison: overview/flowcomparison.md
     - Architecture:
-       - idemeum architecture: overview/architecture.md
-       - On privacy: overview/privacy.md
-       - On security: overview/security.md
+       - Microservices architecture: overview/architecture.md
+       - Security: overview/security.md
+       - Privacy: overview/privacy.md
   - SDK Reference:
     - Overview: reference/sdkoverview.md
     - Javascript:

@@ -18,7 +18,7 @@
     
     
       
-        <title>idemeum architecture - idemeum</title>
+        <title>Microservices architecture - idemeum</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#coming-soon" class="md-skip">
+        <a href="#microservices-architecture" class="md-skip">
           Skip to content
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              idemeum architecture
+              Microservices architecture
             
           </span>
         </div>
@@ -481,9 +481,52 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Microservices architecture
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        idemeum architecture
+        Microservices architecture
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-microservices" class="md-nav__link">
+    Why microservices?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-we-designed-our-architecture" class="md-nav__link">
+    How we designed our architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-topology" class="md-nav__link">
+    Deployment topology
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -494,8 +537,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../privacy/" class="md-nav__link">
-        On privacy
+      <a href="../security/" class="md-nav__link">
+        Security
       </a>
     </li>
   
@@ -506,8 +549,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../security/" class="md-nav__link">
-        On security
+      <a href="../privacy/" class="md-nav__link">
+        Privacy
       </a>
     </li>
   
@@ -893,6 +936,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-microservices" class="md-nav__link">
+    Why microservices?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-we-designed-our-architecture" class="md-nav__link">
+    How we designed our architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-topology" class="md-nav__link">
+    Deployment topology
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -904,7 +976,41 @@
               
                 
                 
-                <h1 id="coming-soon">Coming soon<a class="headerlink" href="#coming-soon" title="Permanent link">&para;</a></h1>
+                <h1 id="microservices-architecture">Microservices Architecture<a class="headerlink" href="#microservices-architecture" title="Permanent link">&para;</a></h1>
+<p>At idemeum we have chosen to build our passwordless identity platform leveraging <strong>Microservice-based Architecture (MSA)</strong>. Our goal is to achieve high velocity in software development while ensuring scalability, availability, and resilience of our cloud infrastructure.</p>
+<p>Our blog talks in details about our journey with microservices. </p>
+<p><a class="md-button" href="https://blog.idemeum.com/microservice-scalability/">Learn more</a></p>
+<h2 id="why-microservices">Why microservices?<a class="headerlink" href="#why-microservices" title="Permanent link">&para;</a></h2>
+<p>We want to be very agile in responding to customer requests and avoid re-deployment of the whole code base for every small change or fix. What is more, we do not want to put reliability of code at risk where any potential bug can bring the whole system down. And of course we want to scale our software development team fast where any developer joining the team can quickly understand the codebase and should not depend on any tribal or historical knowledge.</p>
+<p>Here are the benefits that we are able to achieve with our current infrastructure design. </p>
+<ol>
+<li><strong>Smaller teams</strong> - engineering teams can be smaller and more targeted, each focused on autonomously managing, updating, and scaling a microservice. When onboarding new engineers there is no need to spend weeks figuring out how monolith works whereby increasing team velocity and removing learning curve barrier.  </li>
+<li><strong>Development flexibility</strong> - each team has a flexibility to choose technology stacks that best suit the need of the service and business capability they are developing. Exploration of new technologies and refactoring can be done incrementally as opposed to requiring "big-bang" changes.</li>
+<li><strong>Deployment flexibility</strong> - teams can practice independent continuous integration and deployment of the business capabilities. With MSA a microservice can be updated without having to redeploy the whole application, making it easier to deliver small updates and changes.</li>
+<li><strong>Flexible resource allocation</strong> - with MSA different services can have different availability requirements and have resources assigned based on criticality and business needs.</li>
+<li><strong>Resilience</strong> - with MSA there is not centralized point of failure, and when a certain microservice goes down, the whole application does not stop functioning. Errors are isolated and are easier to remedy. We also believe that MSA is the architecture that provides a path to four 9s SLA with high internal SLO and SLI.</li>
+</ol>
+<h2 id="how-we-designed-our-architecture">How we designed our architecture<a class="headerlink" href="#how-we-designed-our-architecture" title="Permanent link">&para;</a></h2>
+<p>Here are the principles that we relied upon when designing idemeum architecture. </p>
+<ol>
+<li><strong>Single Responsibility Principle (SRP)</strong> - microservices need to be cohesive and implement a small set of strongly related functions.</li>
+<li><strong>Common Closure Principle</strong> - microservices must conform to a principle where things that change together should be packaged together in order to ensure that each change affects only one service.</li>
+<li><strong>Independent data store</strong> - microservice doesn’t share database tables with other microservices.</li>
+<li><strong>Thoughtfully stateful or stateless</strong> - whether it requires access to a persistence store or is it going to be a stateless service providing compute only processing.</li>
+<li><strong>Data availability needs</strong> - data availability needs are accounted for - data distribution, data replication and understanding the impact to other microservices that rely on this new microservice.</li>
+</ol>
+<h2 id="deployment-topology">Deployment topology<a class="headerlink" href="#deployment-topology" title="Permanent link">&para;</a></h2>
+<p><img alt="idemeum deployment topology" src="/assets/architecture/architecture.png" /></p>
+<p>idemeum deployment topology has no single point of failure and provides high availability and fault tolerance using the following AWS services:</p>
+<ul>
+<li>Virtual Private Cloud (VPC)</li>
+<li>Public and Private subnets</li>
+<li>Multiple Availability Zones</li>
+<li>Cross-AZ Load Balancer</li>
+<li>Internet Gateway</li>
+<li>NAT Gateway</li>
+<li>CloudFront / CDN</li>
+</ul>
                 
               
               
@@ -942,13 +1048,13 @@
         </a>
       
       
-        <a href="../privacy/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../security/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              On privacy
+              Security
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -1,4 +1,4 @@
-# idemeum makes digital identity private :lock:
+# We Make Digital Identity Private
 
 Here at idemeum we made user data privacy and security part of our DNA. That is why we designed and built **Privacy-aware Identity Management Architecture**. This is our secret sauce that allows you to offer your users identity privacy and data protection with modern security controls. 
 
@@ -38,3 +38,6 @@ We follow the principles of **data minimization** and **purpose limitation**.
 
 Users' digital identity data is used for only one purpose - log users into applications they choose to. And the data is only collected to the extent necessary to log users successfully into a target application. Digital identity data is not used for any other purposes, including advertising, sharing with third parties, or monetization purposes.
 
+To get more details about how we designed architecture to enable privacy and security read our blog. 
+
+[Learn more about privacy and security](https://blog.idemeum.com/idemeum-keeps-identity-secure-and-private/){ .md-button }
