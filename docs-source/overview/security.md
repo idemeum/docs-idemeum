@@ -3,7 +3,7 @@
 idemeum offers three types of login flows: **one-click**, **login with biometrics**, and **login with idemeum app**.
 
 !!! Abstract "Where identity is stored"
-	**One-click** and **biometric login** are leveraging idemeum **Privacy-aware Identity Management Architecture** where identity data is privately and secure stored in idemeum cloud encrypted by user generated crypto keys. **Mobile app** login offers completely decentralized architecture as identity data is only stored on a mobile device. 
+	**One-click** and **biometric login** are leveraging idemeum **Privacy-aware Identity Management Architecture** where identity data is privately and securely stored in idemeum cloud encrypted by user generated crypto keys. **Mobile app** login offers completely decentralized architecture as identity data is only stored on a mobile device. 
 
 In this section we are going to look a how we secure data for both of the cases. 
 
