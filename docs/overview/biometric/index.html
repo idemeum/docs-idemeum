@@ -1017,31 +1017,32 @@
                 
                 
                 <h1 id="biometric-login">Biometric Login<a class="headerlink" href="#biometric-login" title="Permanent link">&para;</a></h1>
-<p><strong>Biometric login</strong> adds additional level of security by requiring users to authenticate with biometrics leveraging built-in sensors or external authenticators (such as Yubikey). </p>
+<p><strong>Biometric login</strong> adds additional level of security by requiring users to authenticate with biometrics leveraging <strong>platform authenticators</strong> (i.e. <em>Touch ID, Face ID</em>) or external authenticators (i.e. <em>Yubikey</em>). </p>
 <h2 id="how-biometric-login-works">How biometric login works<a class="headerlink" href="#how-biometric-login-works" title="Permanent link">&para;</a></h2>
 <p>Biometric login takes one-click login to the next level by adding biometric based authentication using <a href="https://en.wikipedia.org/wiki/WebAuthn">Webauthn</a>.</p>
-<p>Users register by verifying ownership of an email address with a One Time Code. Then, based on whether developer enabled biometric enrollment option, users will be able to register biometric with Webauthn. Upon registration a public / private key pair is generated, where <strong>public key</strong> is uploaded to FIDO2 server at the idemeum backend, and <strong>private key</strong> is securely stored locally in the FIDO2/CTAP compliant authenticator protected by biometric. All subsequent login requests will be performed with the user providing biometric scan. </p>
+<p>The Web Authentication API (also known as WebAuthn) is a specification written by the <a href="https://www.w3.org">W3C</a> and <a href="https://fidoalliance.org">FIDO</a>, with the participation of Google, Mozilla, Microsoft, Yubico, and others. The API allows servers to register and authenticate users using public key cryptography instead of a password.</p>
+<p>Users register by verifying ownership of an email address with a <strong>One Time Code</strong>. Then, based on whether developer enabled biometric registration option, users will be able to register biometric with Webauthn. Upon registration a public / private key pair is generated, where <strong>public key</strong> is uploaded to FIDO2 server at the idemeum backend, and <strong>private key</strong> is securely stored locally in the FIDO2/CTAP compliant authenticator protected by biometric. All subsequent login requests will be performed with the user providing biometric scan. </p>
 <p>All user interactions are happening right from the browser, whereby providing seamless experience across mobile and desktop platforms. The only requirement is that browser supports Webauthn, and in case it does not, developers have an option to configure a fallback to one-click login. </p>
 <p>You can get more technical details about Webauthn from our blog post.</p>
 <p><a class="md-button" href="https://blog.idemeum.com/noob-guide-to-passwordless-authentication/">Passwordless guide</a></p>
 <h2 id="user-identity-lifecycle">User identity lifecycle<a class="headerlink" href="#user-identity-lifecycle" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Webauthn requires user verification</p>
-<p>Webauthn is a protocol for authenticating users with biometrics. But before Webauthn can be used, user identity needs to be verified. Typically, Webauthn is paired with other Auth methods. idemeum leverages email OTP to create user identity first, and then use Webauthn to enroll biometrics for existing identity. Technically. Webauthn is an extension to one-click login flow.</p>
+<p>Webauthn is a protocol for authenticating users with biometrics. But before Webauthn can be used, user identity needs to be verified. Typically, Webauthn is paired with other Auth methods. idemeum leverages email OTP to create user identity first, and then use Webauthn to register biometrics for existing identity. Technically. Webauthn is an extension to one-click login flow.</p>
 </div>
 <ol>
 <li>
-<p>When a user is logging into an application with idemeum passwordless login for the first time, she will need to go through the <strong>registration</strong> process. Registration will involve verifying email address with OTP and then registering FIDO2/Webauthn credential. </p>
+<p>When a user is logging into an application with idemeum passwordless login for the first time, she will need to go through the <strong>registration</strong> process. Registration will involve verifying email address with OTP and then registering FIDO2/Webauthn credentials. </p>
 </li>
 <li>
-<p>When a user already logged in into <strong>any</strong> app with idemeum passwordless login, she will have a JWT present as cookie in the browser and biometric registered, and she will be able to seamlessly authenticate to any app with a biometric scan. JWT is used to enable Single Sign-On across applications. </p>
+<p>When a user already logged in into <strong>any</strong> app with idemeum passwordless login, she will have a cryptographically signed and encrypted JWT present as cookie in the browser and biometric registered. As a result the user will be able to seamlessly authenticate to any app with a biometric scan. JWT is used to enable Single Sign-On across applications. </p>
 </li>
 </ol>
 <h3 id="1-registration">1. Registration<a class="headerlink" href="#1-registration" title="Permanent link">&para;</a></h3>
 <p>Registration consists of two parts:</p>
 <ol>
 <li>User validates ownership of an email address. idemeum will send a <strong>one-time code</strong> to the email address provided in the login form. That code needs to be typed back in order to prove email ownership.</li>
-<li>User will be prompted to enroll biometric (create public/private key pair using FIDO2/CTAP compliant authenticator).</li>
+<li>User will be prompted to register biometric (create public/private key pair using FIDO2/CTAP compliant authenticator).</li>
 </ol>
 <p>Once registration is complete, idemeum user account is created, unique <a href="https://www.w3.org/TR/did-core/">Decentralized Identifier (DID)</a> is assigned to the user, JWT token is saved as a cookie in the user's browser, and FIDO public/private key pair is generated.  </p>
 <p><img alt="Webauthn registration" src="/assets/biometric/registration-flow.png" /></p>
@@ -1058,7 +1059,8 @@
 <p>Authentication with Webauthn is a breeze, especially coupled with Single Sign-On that idemeum provides. Once registered, when users land in any application that supports idemeum passwordless login, they will be able to authenticate with a simple biometric scan. That is all. Simple and frictionless. </p>
 <p><img alt="Webauthn authentication" src="/assets/biometric/authentication-flow.png" /></p>
 <h2 id="platform-support">Platform support<a class="headerlink" href="#platform-support" title="Permanent link">&para;</a></h2>
-<p>idemeum supports biometric login across desktop and mobile (iOS and Android). In fact, Webauthn is browser dependent, and while most of the mainstream browsers support Webauthn today, there is still some adoption lag. Here is the matrix of the browsers that we tested and support at idemeum: </p>
+<p>idemeum supports biometric login across desktop and mobile (iOS and Android).</p>
+<p>In fact, Webauthn is browser dependent, and while most of the mainstream browsers support Webauthn today, there is still some adoption lag. Here is the matrix of the browsers that we tested and support at idemeum: </p>
                 
               
               

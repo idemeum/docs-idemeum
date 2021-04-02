@@ -4,12 +4,12 @@
 
 ## How One-Click works
 
-Behind the scenes one-click login is using **JSON Web Tokens (JWT)** to authenticate users. 
+Behind the scenes one-click login is using cryptographically signed and encrypted **JSON Web Tokens (JWT)** to authenticate users. 
 
 !!! Abstract "What is JWT?"
 	[JSON Web Token (JWT)](https://en.wikipedia.org/wiki/JSON_Web_Token) is an open standard ([RFC 7519](https://tools.ietf.org/html/rfc7519)) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed.
 
-Users register by verifying ownership of an email address with a One Time Code. Once the user is authenticated, idemeum returns a JSON Web Token that will be saved locally in the user's browser as a cookie. Each subsequent request will include the JWT, allowing the user to access any application that supports idemeum passwordless login. JWT enables users to **Single Sign-On** across applications - it provides small overhead and can be used across domains.
+One-click binds the user’s email with her browser / device using cryptography and fingerprinting. Once the user is authenticated, idemeum returns a cryptographically signed & encrypted JSON Web Token that will be saved locally in the user's browser as a cookie. Each subsequent request will include the JWT, allowing the user to access any application that supports idemeum passwordless login. JWT enables users to **Single Sign-On** across applications and can be used across domains.
 
 This is a stateless authentication mechanism as the user state is never saved in the idemeum backend. JWT points to a [DID](https://www.w3.org/TR/did-core/), which is unique for each user, and does not include **any** identity information. After the user validates his identity and presents his JWT to idemeum backend, she can access identity claims and privately share with the target application.
 
@@ -27,7 +27,9 @@ Let's get deeper into each of the flows.
 
 User registration is very simple - **it requires validating the ownership of an email address with the one-time code.**
 
-When user logs in to your application, he is presented with a passwordless login form. Upon providing an email address, idemeum will send a **one-time code** to users' inbox. That code needs to be typed back in order to prove email ownership. Once registration is complete, idemeum user account is created, Decentralized Identifier (DID) is assigned to the user, and JWT token is saved as a cookie in the user's browser. User identity claims are encrypted by the user generated private key and are stored in a dedicated HSM protected area of idemeum cloud. Only users have access to their identity data. 
+When user logs in to your application, she is presented with a passwordless login form. Upon providing an email address, idemeum will send a **one-time code** to users' inbox. That code needs to be typed back in order to prove email ownership. Once registration is complete, idemeum user account is created, Decentralized Identifier (DID) is assigned to the user, and JWT token is saved as a cookie in the user's browser.
+
+User identity claims are managed in user’s cabinet. The claims are secured using client-side encryption by user managed encryption keys that are backed by envelope encryption and AWS key management service. The master key is protected by hardware security models (HSMs) in AWS cloud. Only users have access to their encrypted identity data.  
 
 ![One-click registration](/assets/one-click/flow.png)
 
