@@ -4,6 +4,8 @@
 
 Users install idemeum app, set it up in two minutes, and they can start logging in into resources that support idemeum passwordless authentication using idemeum app. 
 
+Mobile app uses [Webauthn](https://www.w3.org/TR/webauthn-2/) and [DID](https://www.w3.org/TR/did-core/) asymmetric cryptography to authenticate users' identities with idemeum backend. When a user logs in to an online resource, idemeum backend sends a challenge with the request to authenticate on a mobile device. Once the request is approved with biometrics, mobile app creates Webauthn and DID assertions signed by the previously generated private keys and sends them back to idemeum backend. 
+
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/anaAkNl8a_I' frameborder='0' allowfullscreen></iframe></div>
 
 
@@ -23,7 +25,7 @@ Setting up idemeum is very simple - it will literally take you 5 minutes. As ide
 Let's go through the steps to set it up:
 
 * Launch idemeum app on your mobile device.
-* The app will ask you to enable biometrics. This is the key step to generate crypto keys on your mobile device and register your public key with your backend.
+* The app will ask you to enable biometrics. This is the key step to generate crypto keys on your mobile device and register your biometric and [DID](https://www.w3.org/TR/did-core/) public keys with idemeum backend.
 * As a next step you will need to add your identity information - your email address, your phone number, and your ID document (i.e. driver's license). idemeum app will verify these pieces of information and will store them on a mobile device. NO information will exist in our backend. The email and phone number will be verified using one-time-code and SMS. You just need to grab the codes and input them into the app.
 * To verify drivers license you will need to scan your drivers license in the idemeum app and then do a selfie for liveness detection and to make sure you own that document. The app will guide you through the steps. This step is optional and you can skip it. 
 * You are now all set with idemeum app.
@@ -47,7 +49,7 @@ It is important to note that idemeum app is passwordless and **multi-factor**. T
 
 ### How is app 100% private?
 
-When you create your digital identity with idemeum app, you are assigned a [Decentralized Identifier (DID)](https://www.w3.org/TR/did-core/) that uniquely represents your digital identity among others. You DID is a globally unique persistent identifier that does not require a centralized registration authority because it is generated and registered cryptographically.
+When you create your digital identity with idemeum app, you are assigned a [Decentralized Identifier (DID)](https://www.w3.org/TR/did-core/) that uniquely represents your digital identity among others. You DID is a globally unique persistent identifier that does not require a centralized registration authority because it is generated and registered cryptographically. idemeum also generates a set of asymmetric cryptographic key pairs that will be unique for each user's digital identity.
 
 ![idemeum app privacy](/assets/mobileapp/app-privacy.png)
 
@@ -60,5 +62,5 @@ idemeum mobile app is available on iOS and Android.
 For the authentication flows, we support: 
 
 1. **Desktop authentication** -> login on desktop, use mobile phone to scan the QR code
-2. **Mobile authentication** -> login on mobile device, leverage universal links to authenticate with idemeum app installed on the same device. 
+2. **Mobile authentication** -> login on mobile device, leverage universal / app links to authenticate with idemeum app installed on the same device. 
 

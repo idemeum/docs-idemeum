@@ -1019,6 +1019,7 @@
                 <h1 id="login-with-idemeum-app">Login With idemeum App<a class="headerlink" href="#login-with-idemeum-app" title="Permanent link">&para;</a></h1>
 <p><strong>Login with idemeum app</strong> is the most secure, multi-factor, decentralized, and completely private authentication method for your users. </p>
 <p>Users install idemeum app, set it up in two minutes, and they can start logging in into resources that support idemeum passwordless authentication using idemeum app. </p>
+<p>Mobile app uses <a href="https://www.w3.org/TR/webauthn-2/">Webauthn</a> and <a href="https://www.w3.org/TR/did-core/">DID</a> asymmetric cryptography to authenticate users' identities with idemeum backend. When a user logs in to an online resource, idemeum backend sends a challenge with the request to authenticate on a mobile device. Once the request is approved with biometrics, mobile app creates Webauthn and DID assertions signed by the previously generated private keys and sends them back to idemeum backend. </p>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class='embed-container'><iframe src='https://www.youtube.com/embed/anaAkNl8a_I' frameborder='0' allowfullscreen></iframe></div>
 
@@ -1034,7 +1035,7 @@
 <p>Let's go through the steps to set it up:</p>
 <ul>
 <li>Launch idemeum app on your mobile device.</li>
-<li>The app will ask you to enable biometrics. This is the key step to generate crypto keys on your mobile device and register your public key with your backend.</li>
+<li>The app will ask you to enable biometrics. This is the key step to generate crypto keys on your mobile device and register your biometric and <a href="https://www.w3.org/TR/did-core/">DID</a> public keys with idemeum backend.</li>
 <li>As a next step you will need to add your identity information - your email address, your phone number, and your ID document (i.e. driver's license). idemeum app will verify these pieces of information and will store them on a mobile device. NO information will exist in our backend. The email and phone number will be verified using one-time-code and SMS. You just need to grab the codes and input them into the app.</li>
 <li>To verify drivers license you will need to scan your drivers license in the idemeum app and then do a selfie for liveness detection and to make sure you own that document. The app will guide you through the steps. This step is optional and you can skip it. </li>
 <li>You are now all set with idemeum app.</li>
@@ -1051,7 +1052,7 @@
 <p>Once the user authenticates with the biometric on a mobile device, the requested identity claims (such as email address or phone number) will be <strong>released directly from the app</strong>, not our backend. idemeum mobile app is decentralized and identity claims are only stored on a mobile device. </p>
 <p>It is important to note that idemeum app is passwordless and <strong>multi-factor</strong>. That is why it is called passwordless MFA. You authenticate with two factors: <strong>something you have</strong> (your mobile device with certificate on it) and <strong>something you are</strong> (your biometrics).</p>
 <h3 id="how-is-app-100-private">How is app 100% private?<a class="headerlink" href="#how-is-app-100-private" title="Permanent link">&para;</a></h3>
-<p>When you create your digital identity with idemeum app, you are assigned a <a href="https://www.w3.org/TR/did-core/">Decentralized Identifier (DID)</a> that uniquely represents your digital identity among others. You DID is a globally unique persistent identifier that does not require a centralized registration authority because it is generated and registered cryptographically.</p>
+<p>When you create your digital identity with idemeum app, you are assigned a <a href="https://www.w3.org/TR/did-core/">Decentralized Identifier (DID)</a> that uniquely represents your digital identity among others. You DID is a globally unique persistent identifier that does not require a centralized registration authority because it is generated and registered cryptographically. idemeum also generates a set of asymmetric cryptographic key pairs that will be unique for each user's digital identity.</p>
 <p><img alt="idemeum app privacy" src="/assets/mobileapp/app-privacy.png" /></p>
 <p>idemeum also generates an asymmetric cryptographic key pair that will be unique for your digital identity. Also known as public-key cryptography this style of cryptography uses a public key to encrypt data that can only be decrypted with a paired private key. Public key, which can be known to public, is stored in idemeum backend and is associated with your DID. Private key, which must be kept secret, is safely stored on your mobile device and is protected by hardware based security. On iOS devices we leverage Secure Enclave, and on Android devices we use TEE / Strong Box. </p>
 <h2 id="platform-support">Platform support<a class="headerlink" href="#platform-support" title="Permanent link">&para;</a></h2>
@@ -1059,7 +1060,7 @@
 <p>For the authentication flows, we support: </p>
 <ol>
 <li><strong>Desktop authentication</strong> -&gt; login on desktop, use mobile phone to scan the QR code</li>
-<li><strong>Mobile authentication</strong> -&gt; login on mobile device, leverage universal links to authenticate with idemeum app installed on the same device. </li>
+<li><strong>Mobile authentication</strong> -&gt; login on mobile device, leverage universal / app links to authenticate with idemeum app installed on the same device. </li>
 </ol>
                 
               
