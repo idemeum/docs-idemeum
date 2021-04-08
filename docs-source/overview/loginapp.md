@@ -4,7 +4,7 @@
 
 Users install idemeum app, set it up in two minutes, and they can start logging in into resources that support idemeum passwordless authentication using idemeum app. 
 
-Mobile app uses [Webauthn](https://www.w3.org/TR/webauthn-2/) and [DID](https://www.w3.org/TR/did-core/) asymmetric cryptography to authenticate users' identities with idemeum backend. When a user logs in to an online resource, idemeum backend sends a challenge with the request to authenticate on a mobile device. Once the request is approved with biometrics, mobile app creates Webauthn and DID assertions signed by the previously generated private keys and sends them back to idemeum backend. 
+Mobile app uses [WebAuthn](https://www.w3.org/TR/webauthn-2/) and [DID](https://www.w3.org/TR/did-core/) asymmetric cryptography to authenticate users' identities with idemeum backend. When a user logs in to an online resource, idemeum backend sends a challenge with the request to authenticate on a mobile device. Once the request is approved with biometrics, mobile app creates WebAuthn and DID assertions signed by the previously generated private keys and sends them back to idemeum backend. 
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/anaAkNl8a_I' frameborder='0' allowfullscreen></iframe></div>
 
