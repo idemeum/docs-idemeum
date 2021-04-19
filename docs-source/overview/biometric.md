@@ -56,11 +56,11 @@ You can get more technical details about WebAuthn from our blog post.
 
 [Passwordless guide](https://blog.idemeum.com/noob-guide-to-passwordless-authentication/){ .md-button }
 
-## Platform support
+## Platform and browser support
 
-idemeum supports biometric login across desktop and mobile (iOS and Android).
+idemeum supports biometric login across desktop browser flows and native mobile apps (iOS and Android).
 
-!!! Warning "WebAuthn requires browser support"
-	WebAuthn is browser dependent, and while most of the mainstream browsers support WebAuthn today, there is still some adoption lag. Refer to the official FIDO Alliance documentation to see what browsers support WebAuthn.
-	
-	[Browser support matrix](https://fidoalliance.org/fido2/fido2-web-authentication-webauthn/)
+Check our browser support matrix to see what browsers we support today. 
+
+[Browser support matrix](/knowledgebase/browser-support/){ .md-button }
+

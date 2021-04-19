@@ -37,70 +37,6 @@ When a user already logged in into **any** app with idemeum passwordless login, 
 
 ## One-Click technical overview
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Behind the scenes one-click login is using cryptographically signed and encrypted **JSON Web Tokens (JWT)** to authenticate users. 
 
 !!! Abstract "What is JWT?"
@@ -113,8 +49,10 @@ This is a stateless authentication mechanism as the user state is never saved in
 [More about security and privacy](https://blog.idemeum.com/idemeum-keeps-identity-secure-and-private/){ .md-button }
 
 
+## Platform and browser support
 
+idemeum supports one-click login across desktop browser flows and native mobile apps (iOS and Android).
 
-## Platform support
+Check our browser support matrix to see what browsers we support today. 
 
-idemeum supports one-click login flow across desktop and mobile. 
+[Browser support matrix](/knowledgebase/browser-support/){ .md-button }

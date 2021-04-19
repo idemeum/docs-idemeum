@@ -87,6 +87,9 @@ nav:
        - Worspace ONE Access: ws1access.md
        - Okta: okta.md
        - Google Cloud Identity: google.md
+  - Knowledgebase:
+    - Authentication:
+       - Browrser support: knowledgebase/browser-support.md
   - Blog: https://blog.idemeum.com
   - Help: gethelp.md
 
