@@ -6,7 +6,7 @@ In this doc we will take a look at what browsers idemeum supports with **[one-cl
 
 | Browser | Windows | Mac OS | Android | iOS |
 | ------- | ------- | ------ | ------- | --- |
-| :fontawesome-brands-chrome: **Chrome**  | One-click<br>Biometric<br>Mobile app | One-click<br>Biometric<br>Mobile app | One-click<br>Biometric<br>Mobile app | One-click<br>Biometric<br>Mobile app| 
+| :fontawesome-brands-chrome: **Chrome**  | One-click<br>Biometric<br>Mobile app | One-click<br>Biometric<br>Mobile app | One-click<br>Biometric<br>Mobile app | One-click<br>Mobile app| 
 | :material-firefox: **FireFox** | One-click<br>Biometric<br>Mobile app | One-click<br>Mobile app | One-click<br>Mobile app | One-click<br>Mobile app |
 | :material-apple-safari: **Safari** | -  | One-click<br>Biometric[^1]<br>Mobile app | - | One-click<br>Biometric[^1]<br>Mobile app |
 | :fontawesome-brands-edge: **Edge** | One-click<br>Biometric<br>Mobile app | One-click<br>Biometric<br>Mobile app | One-click<br>Biometric<br>Mobile app |- | 
