@@ -1,4 +1,4 @@
-# Microservices Architecture
+# Microservices architecture
 
 At idemeum we have chosen to build our passwordless identity platform leveraging **Microservice-based Architecture (MSA)**. Our goal is to achieve high velocity in software development while ensuring scalability, availability, and resilience of our cloud infrastructure.
 

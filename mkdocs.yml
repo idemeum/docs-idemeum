@@ -32,7 +32,7 @@ theme:
   language: en
   font:
     text: Inter
-    code: Ubuntu
+    code: Source Code 
   logo: assets/logo.svg
   favicon: assets/logo.svg
   features:
@@ -46,10 +46,11 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.inlinehilite
   - attr_list
   - admonition
   - pymdownx.highlight:
-      linenums: true
+      linenums: false
   - pymdownx.superfences
   - abbr
   - def_list
@@ -57,12 +58,14 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.details
   - toc:
       permalink: true
 
 nav:
-  - Overview:
-    - What is idemeum?: index.md
+  - Overview: 
+    - Welcome: index.md
+    - What is idemeum?: overview/definition.md
     - Login flows:
        - One-click login: overview/oneclick.md
        - Biometric login: overview/biometric.md
@@ -72,17 +75,11 @@ nav:
        - Microservices architecture: overview/architecture.md
        - Security: overview/security.md
        - Privacy: overview/privacy.md
-  - SDK Reference:
-    - Overview: reference/sdkoverview.md
-    - Javascript:
-       - How to guide: reference/howtojs.md
-       - Sample app: reference/appjs.md
-    - iOS:
-       - How to guide: reference/howtoios.md
-       - Sample app: reference/appios.md
-    - Android:
-       - How to guide: reference/howtoandroid.md
-       - Sample app: reference/appandroid.md
+  - SDKs and guides:
+    - SDK overview: reference/sdkoverview.md
+    - Single-page app:
+       - Javascript:
+          - Quickstart: reference/js-quickstart.md
   - Integrations:
     - Enterprise SSO: 
        - Overview: sso-overview.md

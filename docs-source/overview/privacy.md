@@ -1,4 +1,4 @@
-# We Make Digital Identity Private
+#:fontawesome-solid-low-vision: How idemeum makes identity private
 
 Here at idemeum we made user data privacy and security part of our DNA. That is why we designed and built **Privacy-aware Identity Management Architecture**. This is our secret sauce that allows you to offer your users identity privacy and data protection with modern security controls. 
 

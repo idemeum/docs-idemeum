@@ -1,4 +1,4 @@
-# Login Flows Comparison Matrix
+# Login flows comparison table
 
 In previous sections we reviewed **one-click**, **biometric**, and **idemeum app** login flows in detail. Let's take a look at the comparison table that will help you choose what login flow is best suited for your user experience and technical requirements. 
 

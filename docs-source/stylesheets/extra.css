@@ -18,3 +18,135 @@
 
 .md-button--yellow{color:#FFC463; background-color:#FFC463; border-color:#FFC463; text-align: #FFC463;}
 
+
+
+
+.card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  padding: 2em 0;
+  background: #FFF;
+  box-shadow: 0 0 6px 0 rgba(32, 32, 36, 0.12);
+  transition: all 0.35s ease;
+  padding: 1rem;
+  height: 100%;
+  font-size: .7rem;
+}	
+
+.card:hover {
+  box-shadow: 0 10px 20px 0 rgba(32, 32, 36, 0.12);
+}
+
+.card .logo {
+  margin: 0 0 1em;
+  width: 2rem;
+  height: 2rem;
+  transition: all 0.35s ease;
+}
+
+.card h6 {
+  color: #999;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 2px;
+  font-size: 0.65rem;
+}
+
+.card .hover_content p {
+  margin: 1.5em 0 0;
+  color: #6E6E70;
+  line-height: 1.4em;
+}
+
+.card::before, .card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #FFC463;
+  height: 4px;
+}
+.card::before {
+  width: 0;
+  opacity: 0;
+  transition: opacity 0 ease, width 0 ease;
+  transition-delay: 0.5s;
+}
+.card::after {
+  width: 100%;
+  background: white;
+  transition: width 0.5s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px 0 rgba(32, 32, 36, 0.12);
+}
+.card:hover::before {
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.5s ease, width 0.5s ease;
+  transition-delay: 0;
+}
+.card:hover::after {
+  width: 0;
+  opacity: 0;
+  transition: width 0 ease;
+}
+
+.logo {
+  margin-right: 0.75rem;
+  width: 1.2rem;
+  min-width: 1.2rem;
+}
+
+.card-content {
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+/* Screen larger than 600px? 2 column */
+@media (min-width: 600px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Screen larger than 900px? 3 columns */
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+  
+}
+
+.intro {
+color: rgba(0,0,0,0.54);
+font-size: 1.2em;
+margin-bottom: 1.2em;
+max-width: 40em;
+line-height: 1.5;
+}
+
+h1.md-typerset {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 5rem;
+  padding-top: 0;
+}
+
+.md-typeset__table {
+   min-width: 100%;
+}
+
+.md-typeset table:not([class]) {
+    display: table;
+}
