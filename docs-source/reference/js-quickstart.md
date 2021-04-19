@@ -1,4 +1,4 @@
-# :material-language-javascript: JavaScript Login
+# :material-language-javascript: JavaScript Login SDK
 
 This quick-start guide will help you quickly add Auth functionality to your JavaScript single-page application. 
 
