@@ -9,7 +9,7 @@ In this doc we will take a look at what browsers idemeum supports with **[one-cl
 | :fontawesome-brands-chrome: **Chrome**  | One-click<br>Biometric<br>Mobile app | One-click<br>Biometric<br>Mobile app | One-click<br>Biometric<br>Mobile app | One-click<br>Mobile app| 
 | :material-firefox: **FireFox** | One-click<br>Biometric<br>Mobile app | One-click<br>Mobile app | One-click<br>Mobile app | One-click<br>Mobile app |
 | :material-apple-safari: **Safari** | -  | One-click<br>Biometric[^1]<br>Mobile app | - | One-click<br>Biometric[^1]<br>Mobile app |
-| :fontawesome-brands-edge: **Edge** | One-click<br>Biometric<br>Mobile app | One-click<br>Biometric<br>Mobile app | One-click<br>Biometric<br>Mobile app |- | 
+| :fontawesome-brands-edge: **Edge** | One-click<br>Biometric<br>Mobile app | One-click<br>Biometric<br>Mobile app | One-click<br>Mobile app |- | 
 
 [^1]: Due to privacy controls Safari requires user gesture to trigger WebAuthn authentication. Therefore, additional button click is introduced in the flow in order to enable the biometrics flow. 
 
