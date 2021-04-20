@@ -59,6 +59,7 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.details
+  - pymdownx.keys
   - toc:
       permalink: true
 
@@ -78,8 +79,7 @@ nav:
   - SDKs and guides:
     - SDK overview: reference/sdkoverview.md
     - Single-page app:
-       - Javascript:
-          - Quickstart: reference/js-quickstart.md
+       - Javascript guide: reference/js-quickstart.md
   - Integrations:
     - Enterprise SSO: 
        - Overview: sso-overview.md
@@ -87,9 +87,9 @@ nav:
        - Worspace ONE Access: ws1access.md
        - Okta: okta.md
        - Google Cloud Identity: google.md
-  - Knowledgebase:
+  - Knowledge base:
     - Authentication:
-       - Browrser support: knowledgebase/browser-support.md
+       - Browser support: knowledgebase/browser-support.md
   - Blog: https://blog.idemeum.com
   - Help: gethelp.md
 

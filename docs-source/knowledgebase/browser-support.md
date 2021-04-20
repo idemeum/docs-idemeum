@@ -17,7 +17,7 @@ In this doc we will take a look at what browsers idemeum supports with **[one-cl
 !!! Warning "WebAuthn requires browser native support"
 	WebAuthn is browser dependent, and while most of the mainstream browsers support WebAuthn today, there is still some adoption lag. We always check the latest with official FIDO Alliance documentation so that we can test idemeum with the latest browser versions. Below you can find our update to date browser support matrix. 
 	
-	[FIDO Alliance official support matrix for WebaAuthn](https://fidoalliance.org/fido2/fido2-web-authentication-webauthn/)
+	[FIDO Alliance official support matrix for WebAuthn](https://fidoalliance.org/fido2/fido2-web-authentication-webauthn/)
 
 
 

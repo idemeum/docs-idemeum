@@ -18,7 +18,7 @@
     
     
       
-        <title>Quickstart - idemeum</title>
+        <title>Javascript guide - idemeum</title>
       
     
     
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quickstart
+              Javascript guide
             
           </span>
         </div>
@@ -276,7 +276,7 @@
   
     <li class="md-tabs__item">
       <a href="../../knowledgebase/browser-support/" class="md-tabs__link">
-        Knowledgebase
+        Knowledge base
       </a>
     </li>
   
@@ -616,29 +616,6 @@
     
   
   
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" type="checkbox" id="__nav_2_2_1" checked>
-      
-      <label class="md-nav__link" for="__nav_2_2_1">
-        Javascript
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Javascript" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_2_1">
-          <span class="md-nav__icon md-icon"></span>
-          Javascript
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-    
-  
-  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -647,12 +624,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Quickstart
+          Javascript guide
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Quickstart
+        Javascript guide
       </a>
       
         
@@ -691,8 +668,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#initialized-idemeum-sdk" class="md-nav__link">
-    Initialized idemeum SDK
+  <a href="#initialize-idemeum-sdk" class="md-nav__link">
+    Initialize idemeum SDK
   </a>
   
 </li>
@@ -727,12 +704,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -882,13 +853,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
-        Knowledgebase
+        Knowledge base
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Knowledgebase" data-md-level="1">
+      <nav class="md-nav" aria-label="Knowledge base" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          Knowledgebase
+          Knowledge base
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -921,7 +892,7 @@
   
     <li class="md-nav__item">
       <a href="../../knowledgebase/browser-support/" class="md-nav__link">
-        Browrser support
+        Browser support
       </a>
     </li>
   
@@ -1016,8 +987,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#initialized-idemeum-sdk" class="md-nav__link">
-    Initialized idemeum SDK
+  <a href="#initialize-idemeum-sdk" class="md-nav__link">
+    Initialize idemeum SDK
   </a>
   
 </li>
@@ -1077,7 +1048,8 @@
 
 <h2 id="1-initialize-idemeum-sdk">1. Initialize idemeum SDK<a class="headerlink" href="#1-initialize-idemeum-sdk" title="Permanent link">&para;</a></h2>
 <h3 id="basic-html-setup">Basic HTML setup<a class="headerlink" href="#basic-html-setup" title="Permanent link">&para;</a></h3>
-<p>As a first step, let's set up a simple <code>index.html</code> page that we will be using for our application. We will set up some very simple css styles in order to forma the presentation on the page. This HTML page will display a welcome message and will have a section where only logged in users can see their data.  </p>
+<p>As a first step, let's set up a simple <code>index.html</code> page that we will be using for our application. We will set up some very simple css styles in order to format how thing are organized in our page.</p>
+<p>This HTML page will display a simple log in button. Upon clicking a button, user will be authenticated by idemeum. As a developer you can choose how to authenticate the user (<strong>one-click</strong>, <strong>biometric</strong>, or <strong>mobile app</strong>). Upon successful authentication JWT tokens will be returned to the application and the user will be greeted.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -1087,7 +1059,7 @@
   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>idemeum JS authentication sample<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Welcome to application!<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Welcome to Application!<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;initial&quot;</span><span class="p">&gt;</span>Loading...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -1096,72 +1068,82 @@
 <p>We can now import idemeum JavaScript SDK. For this guide we will simply import the script from idemeum CDN. </p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://asset.idemeum.com/webapp/SDK/idemeum.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
-<h3 id="initialized-idemeum-sdk">Initialized idemeum SDK<a class="headerlink" href="#initialized-idemeum-sdk" title="Permanent link">&para;</a></h3>
+<h3 id="initialize-idemeum-sdk">Initialize idemeum SDK<a class="headerlink" href="#initialize-idemeum-sdk" title="Permanent link">&para;</a></h3>
 <p>We can now initialize idemeum SDK instance. </p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Sample to initialize idemeum JS SDK</span>
-
-<span class="kd">var</span> <span class="nx">idemeum</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">IdemeumManager</span><span class="p">({</span>
-<span class="hll">    <span class="nx">clientId</span><span class="o">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span> <span class="c1">// 👈 Replace clientId with the the one you get from idemeum developer portal</span>
+<div class="highlight"><pre><span></span><code>      <span class="c1">// Sample to initialize idemeum JS SDK</span>
+      <span class="kd">var</span> <span class="nx">oidc</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nx">idemeum</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">IdemeumManager</span><span class="p">({</span>
+<span class="hll">        <span class="nx">clientId</span><span class="o">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span> <span class="c1">// 👈 Replace clientId with the the one you get from idemeum developer portal</span>
 </span>
-    <span class="nx">onSuccess</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">successResponse</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Your application will recieve ID and Access tokens from idemeum</span>
-        <span class="nx">oidc</span> <span class="o">=</span> <span class="nx">successResponse</span><span class="p">.</span><span class="nx">oidc</span><span class="p">;</span>
-        <span class="nx">idToken</span> <span class="o">=</span> <span class="nx">oidc</span><span class="p">.</span><span class="nx">idToken</span><span class="p">;</span>
-        <span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">oidc</span><span class="p">.</span><span class="nx">accessToken</span><span class="p">;</span>
+        <span class="c1">// OnSuccess of the login, this function will be executed</span>
+        <span class="nx">onSuccess</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">successResponse</span><span class="p">)</span> <span class="p">{</span>
+          <span class="c1">// Your application will receive ID and Access tokens from idemeum</span>
+          <span class="nx">oidc</span> <span class="o">=</span> <span class="nx">successResponse</span><span class="p">.</span><span class="nx">oidc</span><span class="p">;</span>
+          <span class="c1">// getUserClaims validates the oidc token and fetches the user approved claims</span>
+          <span class="nx">renderUserClaims</span><span class="p">();</span>
         <span class="p">},</span>
-
         <span class="nx">onError</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">errorResponse</span><span class="p">)</span> <span class="p">{</span>
           <span class="c1">// If there is an error you can process it here</span>
         <span class="p">}</span>
       <span class="p">});</span>
 </code></pre></div>
 <h2 id="2-get-and-validate-tokens">2. Get and validate tokens<a class="headerlink" href="#2-get-and-validate-tokens" title="Permanent link">&para;</a></h2>
-<p>idemeum SDK provides built-in capability to validate ID and Access tokens. Let's set up a function to get the tokens validated and user claims extracted. </p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Sample code to use idemeum SDK to get and validate user claims (ID token)</span>
+<p>idemeum SDK returns ID and Access tokens upon successful user login. For token validation you can:</p>
+<ol>
+<li>Validate token yourself using any of the open source JWT token validation <a href="https://jwt.io">libraries</a></li>
+<li>Use idemeum SDK that provides built-in capability to validate tokens</li>
+</ol>
+<p>In our guide we will rely on idemeum SDKs to validate tokens and extract user identity claims. </p>
+<p>Let's set up a function <code class="highlight"><span class="nx">renderUserClaims</span><span class="p">()</span></code> to render user claims. We will take ID and Access tokens and validate them using <code class="highlight"><span class="nx">getUserClaims</span><span class="p">()</span></code> by passing OIDC token as an input value. </p>
+<p>We will then create HTML to display to the user when she is logged in along with a <code>Logout</code> button. </p>
+<div class="highlight"><pre><span></span><code>      <span class="kd">function</span> <span class="nx">renderUserClaims</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">idemeum</span>
+<span class="hll">          <span class="p">.</span><span class="nx">getUserClaims</span><span class="p">(</span><span class="nx">oidc</span><span class="p">)</span>
+</span>          <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">userClaimsResponse</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//fetch user approved claims from OIDC token</span>
+            <span class="nx">htmlStart</span> <span class="o">=</span> <span class="sb">`&lt;div&gt;</span>
+<span class="sb">                          &lt;p align=&quot;left&quot;&gt;You are currently logged in.&lt;/p&gt;</span>
+<span class="sb">                          &lt;pre id=&quot;ipt-user-profile&quot; align=&quot;left&quot;&gt;User profile:&lt;br&gt;`</span><span class="p">;</span>
+            <span class="nx">htmlProfile</span> <span class="o">=</span>
+              <span class="s2">&quot;&lt;b&gt;&lt;h3 style=&#39;color:Tomato;&#39;&gt;First Name:&quot;</span> <span class="o">+</span>
+              <span class="nx">userClaimsResponse</span><span class="p">.</span><span class="nx">given_name</span> <span class="o">+</span>
+              <span class="s2">&quot;&lt;/h3&gt;&lt;/b&gt;&lt;br&gt;&quot;</span> <span class="o">+</span>
+              <span class="s2">&quot;&lt;b&gt;&lt;h3 style=&#39;color:Tomato;&#39;&gt;Last Name:&quot;</span> <span class="o">+</span>
+              <span class="nx">userClaimsResponse</span><span class="p">.</span><span class="nx">family_name</span> <span class="o">+</span>
+              <span class="s2">&quot;&lt;/h3&gt;&lt;/b&gt;&lt;br&gt;&quot;</span> <span class="o">+</span>
+              <span class="s2">&quot;&lt;b&gt;&lt;h3 style=&#39;color:Tomato;&#39;&gt;Email:&quot;</span> <span class="o">+</span>
+              <span class="nx">userClaimsResponse</span><span class="p">.</span><span class="nx">email</span><span class="p">;</span>
 
-<span class="kd">function</span> <span class="nx">getUserClaims</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">idemeum</span><span class="p">.</span><span class="nx">getUserClaims</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">userClaims</span><span class="p">)</span> <span class="p">{</span>
-
-    <span class="c1">// You can use user identity claims for various purposes depending on your use cases</span>
-
-    <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">errorResponse</span><span class="p">)</span> <span class="p">{</span>
-
-      <span class="c1">// Handle the error response here</span>
-
-    <span class="p">});</span>
-<span class="p">}</span>  
+            <span class="nx">htmlEnd</span> <span class="o">=</span> <span class="sb">`      </span>
+<span class="sb">                    &lt;/pre&gt;</span>
+<span class="sb">                    &lt;/div&gt;</span>
+<span class="sb">                    &lt;button id=&quot;btn-logout&quot; onclick=&quot;idemeum.logout()&quot;&gt;Log out&lt;/button&gt;`</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;initial&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span>
+              <span class="nx">htmlStart</span> <span class="o">+</span> <span class="nx">htmlProfile</span> <span class="o">+</span> <span class="nx">htmlEnd</span><span class="p">;</span>
+          <span class="p">})</span>
+          <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">errorResponse</span><span class="p">)</span> <span class="p">{});</span>
+      <span class="p">}</span>
 </code></pre></div>
 <h2 id="3-manage-user-authentication-state">3. Manage user authentication state<a class="headerlink" href="#3-manage-user-authentication-state" title="Permanent link">&para;</a></h2>
 <p>Now we can create code to manage user authentication state. We need to determine if the user is logged in, and then define what content to render. We will also need to have the capability to log the users out. </p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Sample to evaluate login state of the user</span>
-
-<span class="kd">function</span> <span class="nx">isUserLoggedIn</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">html</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-
-    <span class="c1">// Process the user logged-in state. We will create log out button and gated content.</span>
-    <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Get user ID token, validate it and extract identity claims</span>
-        <span class="nx">html</span> <span class="o">=</span> <span class="sb">`</span>
-<span class="sb">            &lt;button id=&quot;btn-logout&quot; onclick=&quot;idemeum.logout()&quot;&gt;Log out&lt;/button&gt;</span>
-<span class="sb">            &lt;div&gt;</span>
-<span class="sb">                &lt;p&gt;You are currently logged in.&lt;/p&gt;</span>
-<span class="sb">                    &lt;label&gt;User profile:</span>
-<span class="sb">                        &lt;pre id=&quot;ipt-user-profile&quot;&gt;&lt;/pre&gt;</span>
-<span class="sb">                    &lt;/label&gt;</span>
-<span class="sb">             &lt;/div&gt;`</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>      <span class="c1">// Sample to evaluate login state of the user</span>
+      <span class="kd">function</span> <span class="nx">isUserLoggedIn</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// Process the user logged-in state. We will create log out button and gated content.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">idemeum</span><span class="p">.</span><span class="nx">isUserLoggedIn</span><span class="p">())</span> <span class="p">{</span>
+          <span class="c1">//  Display user claims</span>
+          <span class="nx">renderUserClaims</span><span class="p">();</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="c1">// Process the user not logged in state. We will create login button.</span>
-            <span class="nx">html</span> <span class="o">=</span> <span class="sb">`&lt;button id=&quot;btn-login&quot; onclick=&quot;idemeum.login()&quot;&gt;Log in&lt;/button&gt;`</span><span class="p">;</span>
+          <span class="nx">html</span> <span class="o">=</span> <span class="sb">`&lt;button id=&quot;btn-login&quot; onclick=&quot;idemeum.signin()&quot;&gt;Log in&lt;/button&gt;`</span><span class="p">;</span>
+          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;initial&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">html</span><span class="p">;</span>
         <span class="p">}</span>
-
-        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;initial&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">html</span><span class="p">;</span>
       <span class="p">}</span>
 </code></pre></div>
-<p>And we can trigger <code>#!JavaScript</code> simply when the body of the document loads.</p>
+<p>And we can trigger <code class="highlight">isUserLoggedIn()</code> simply when the body of the document loads.</p>
 <div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">body</span> <span class="na">onload</span><span class="o">=</span><span class="s">&quot;isUserLoggedIn()&quot;</span><span class="p">&gt;</span>
 </code></pre></div>
 <h2 id="full-working-example"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Full working example<a class="headerlink" href="#full-working-example" title="Permanent link">&para;</a></h2>
-<p>We have completed simple idemeum JavaScript SDK integration with your single-page application. Here is the example of the full code we have discussed so far. </p>
+<p>We have completed simple idemeum JavaScript SDK integration with our single-page application.</p>
+<p>Here is the example of the full code we have discussed so far. </p>
 <details class="example" open="open"><summary>Single-page app integration with idemeum JS SDK</summary><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -1171,61 +1153,66 @@
     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://asset.idemeum.com/webapp/SDK/idemeum.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
       <span class="c1">// Sample to initialize idemeum JS SDK</span>
+      <span class="kd">var</span> <span class="nx">oidc</span><span class="p">;</span>
       <span class="kd">var</span> <span class="nx">idemeum</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">IdemeumManager</span><span class="p">({</span>
         <span class="nx">clientId</span><span class="o">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span> <span class="c1">// 👈 Replace clientId with the the one you get from idemeum developer portal</span>
 
+        <span class="c1">// OnSuccess of the login, this function will be executed</span>
         <span class="nx">onSuccess</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">successResponse</span><span class="p">)</span> <span class="p">{</span>
-          <span class="c1">// Your application will recieve ID and Access tokens from idemeum</span>
+          <span class="c1">// Your application will receive ID and Access tokens from idemeum</span>
           <span class="nx">oidc</span> <span class="o">=</span> <span class="nx">successResponse</span><span class="p">.</span><span class="nx">oidc</span><span class="p">;</span>
-          <span class="nx">idToken</span> <span class="o">=</span> <span class="nx">oidc</span><span class="p">.</span><span class="nx">idToken</span><span class="p">;</span>
-          <span class="nx">accessToken</span> <span class="o">=</span> <span class="nx">oidc</span><span class="p">.</span><span class="nx">accessToken</span><span class="p">;</span>
-          <span class="nx">expires_in</span> <span class="o">=</span> <span class="nx">oidc</span><span class="p">.</span><span class="nx">expires_in</span><span class="p">;</span>
+          <span class="c1">// getUserClaims validates the oidc token and fetches the user approved claims</span>
+          <span class="nx">renderUserClaims</span><span class="p">();</span>
         <span class="p">},</span>
         <span class="nx">onError</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">errorResponse</span><span class="p">)</span> <span class="p">{</span>
           <span class="c1">// If there is an error you can process it here</span>
         <span class="p">}</span>
       <span class="p">});</span>
 
-      <span class="c1">// Sample code to get and validate user information from ID token</span>
-      <span class="kd">function</span> <span class="nx">getUserClaims</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">function</span> <span class="nx">renderUserClaims</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">idemeum</span>
-          <span class="p">.</span><span class="nx">getUserClaims</span><span class="p">()</span>
-          <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">userClaims</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">// You can use user identity claims for various purposes depending on your use cases</span>
+          <span class="p">.</span><span class="nx">getUserClaims</span><span class="p">(</span><span class="nx">oidc</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">userClaimsResponse</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//fetch user approved claims from OIDC token</span>
+            <span class="nx">htmlStart</span> <span class="o">=</span> <span class="sb">`&lt;div&gt;</span>
+<span class="sb">                          &lt;p align=&quot;left&quot;&gt;You are currently logged in.&lt;/p&gt;</span>
+<span class="sb">                          &lt;pre id=&quot;ipt-user-profile&quot; align=&quot;left&quot;&gt;User profile:&lt;br&gt;`</span><span class="p">;</span>
+            <span class="nx">htmlProfile</span> <span class="o">=</span>
+              <span class="s2">&quot;&lt;b&gt;&lt;h3 style=&#39;color:Tomato;&#39;&gt;First Name:&quot;</span> <span class="o">+</span>
+              <span class="nx">userClaimsResponse</span><span class="p">.</span><span class="nx">given_name</span> <span class="o">+</span>
+              <span class="s2">&quot;&lt;/h3&gt;&lt;/b&gt;&lt;br&gt;&quot;</span> <span class="o">+</span>
+              <span class="s2">&quot;&lt;b&gt;&lt;h3 style=&#39;color:Tomato;&#39;&gt;Last Name:&quot;</span> <span class="o">+</span>
+              <span class="nx">userClaimsResponse</span><span class="p">.</span><span class="nx">family_name</span> <span class="o">+</span>
+              <span class="s2">&quot;&lt;/h3&gt;&lt;/b&gt;&lt;br&gt;&quot;</span> <span class="o">+</span>
+              <span class="s2">&quot;&lt;b&gt;&lt;h3 style=&#39;color:Tomato;&#39;&gt;Email:&quot;</span> <span class="o">+</span>
+              <span class="nx">userClaimsResponse</span><span class="p">.</span><span class="nx">email</span><span class="p">;</span>
+
+            <span class="nx">htmlEnd</span> <span class="o">=</span> <span class="sb">`      </span>
+<span class="sb">                    &lt;/pre&gt;</span>
+<span class="sb">                    &lt;/div&gt;</span>
+<span class="sb">                    &lt;button id=&quot;btn-logout&quot; onclick=&quot;idemeum.logout()&quot;&gt;Log out&lt;/button&gt;`</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;initial&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span>
+              <span class="nx">htmlStart</span> <span class="o">+</span> <span class="nx">htmlProfile</span> <span class="o">+</span> <span class="nx">htmlEnd</span><span class="p">;</span>
           <span class="p">})</span>
-          <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">errorResponse</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">// Handle the error response here</span>
-          <span class="p">});</span>
+          <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">errorResponse</span><span class="p">)</span> <span class="p">{});</span>
       <span class="p">}</span>
 
       <span class="c1">// Sample to evaluate login state of the user</span>
       <span class="kd">function</span> <span class="nx">isUserLoggedIn</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nx">html</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-
         <span class="c1">// Process the user logged-in state. We will create log out button and gated content.</span>
-        <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-          <span class="c1">// Get user ID token, validate it and extract identity claims</span>
-
-          <span class="nx">html</span> <span class="o">=</span> <span class="sb">`</span>
-<span class="sb">                    &lt;button id=&quot;btn-logout&quot; onclick=&quot;idemeum.logout()&quot;&gt;Log out&lt;/button&gt;</span>
-<span class="sb">                    &lt;div&gt;</span>
-<span class="sb">                          &lt;p&gt;You are currently logged in.&lt;/p&gt;</span>
-<span class="sb">                          &lt;label&gt;User profile:</span>
-<span class="sb">                              &lt;pre id=&quot;ipt-user-profile&quot;&gt;&lt;/pre&gt;</span>
-<span class="sb">                          &lt;/label&gt;</span>
-<span class="sb">                    &lt;/div&gt;`</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">idemeum</span><span class="p">.</span><span class="nx">isUserLoggedIn</span><span class="p">())</span> <span class="p">{</span>
+          <span class="c1">//  Display user claims</span>
+          <span class="nx">renderUserClaims</span><span class="p">();</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-          <span class="c1">// Process the user not logged in state. We will create login button.</span>
-          <span class="nx">html</span> <span class="o">=</span> <span class="sb">`&lt;button id=&quot;btn-login&quot; onclick=&quot;idemeum.login()&quot;&gt;Log in&lt;/button&gt;`</span><span class="p">;</span>
+          <span class="nx">html</span> <span class="o">=</span> <span class="sb">`&lt;button id=&quot;btn-login&quot; onclick=&quot;idemeum.signin()&quot;&gt;Log in&lt;/button&gt;`</span><span class="p">;</span>
+          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;initial&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">html</span><span class="p">;</span>
         <span class="p">}</span>
-
-        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;initial&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">html</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">body</span> <span class="na">onload</span><span class="o">=</span><span class="s">&quot;isUserLoggedIn()&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>idemeum JS authentication sample<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Welcome to application!<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Welcome to Application!<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;initial&quot;</span><span class="p">&gt;</span>Loading...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
