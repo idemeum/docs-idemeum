@@ -165,7 +165,7 @@ And we can trigger `#!html isUserLoggedIn()` simply when the body of the documen
 	<body onload="isUserLoggedIn()">
 ```
 
-### 3. Log the user in
+## 3. Log the user in
 
 When user clicks `Log in` button, idemeum SDK will trigger the `login` method. Let's define what will need to happen in our application. On success our application will receive ID and Access tokens from idemeum. We will need to process and validate those tokens. In case there is failure, we can process that as well in our code. 
 
@@ -186,7 +186,7 @@ When user clicks `Log in` button, idemeum SDK will trigger the `login` method. L
 
 ```
 
-## 2. Get and validate user claims
+## 4. Get and validate user claims
 
 idemeum SDK returns ID and Access tokens upon successful user login. For token validation you can:
 

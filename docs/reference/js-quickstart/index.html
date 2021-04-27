@@ -691,24 +691,18 @@
     2. Manage user authentication state
   </a>
   
-    <nav class="md-nav" aria-label="2. Manage user authentication state">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#3-log-the-user-in" class="md-nav__link">
     3. Log the user in
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#2-get-and-validate-user-claims" class="md-nav__link">
-    2. Get and validate user claims
+  <a href="#4-get-and-validate-user-claims" class="md-nav__link">
+    4. Get and validate user claims
   </a>
   
 </li>
@@ -1030,24 +1024,18 @@
     2. Manage user authentication state
   </a>
   
-    <nav class="md-nav" aria-label="2. Manage user authentication state">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#3-log-the-user-in" class="md-nav__link">
     3. Log the user in
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#2-get-and-validate-user-claims" class="md-nav__link">
-    2. Get and validate user claims
+  <a href="#4-get-and-validate-user-claims" class="md-nav__link">
+    4. Get and validate user claims
   </a>
   
 </li>
@@ -1246,7 +1234,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">body</span> <span class="na">onload</span><span class="o">=</span><span class="s">&quot;isUserLoggedIn()&quot;</span><span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="3-log-the-user-in">3. Log the user in<a class="headerlink" href="#3-log-the-user-in" title="Permanent link">&para;</a></h3>
+<h2 id="3-log-the-user-in">3. Log the user in<a class="headerlink" href="#3-log-the-user-in" title="Permanent link">&para;</a></h2>
 <p>When user clicks <code>Log in</code> button, idemeum SDK will trigger the <code>login</code> method. Let's define what will need to happen in our application. On success our application will receive ID and Access tokens from idemeum. We will need to process and validate those tokens. In case there is failure, we can process that as well in our code. </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -1273,7 +1261,7 @@
       <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="2-get-and-validate-user-claims">2. Get and validate user claims<a class="headerlink" href="#2-get-and-validate-user-claims" title="Permanent link">&para;</a></h2>
+<h2 id="4-get-and-validate-user-claims">4. Get and validate user claims<a class="headerlink" href="#4-get-and-validate-user-claims" title="Permanent link">&para;</a></h2>
 <p>idemeum SDK returns ID and Access tokens upon successful user login. For token validation you can:</p>
 <ol>
 <li>Validate token yourself using any of the open source JWT token validation <a href="https://jwt.io">libraries</a></li>
