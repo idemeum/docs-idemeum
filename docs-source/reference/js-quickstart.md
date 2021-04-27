@@ -1,24 +1,73 @@
-# :material-language-javascript: JavaScript Login SDK
+# :material-language-javascript: JavaScript idemeum SDK
 
-This quick-start guide will help you quickly add Auth functionality to your JavaScript single-page application. 
+This quick-start guide will help you quickly add login functionality to your JavaScript single-page application. 
 
-!!! Note "Integration steps"
-	As a developer you have to deal with certain Auth related tasks when you are building your application. Our goal with JS SDK was to abstract as much complexity, yet give you enough flexibility so that you can address the use cases you need.
+<div class="cards">
+
+<a href="https://codesandbox.io/s/idemeum-javascript-sample-app-3noir?file=/index.html" target="_blank">
+<div class="card">
+    <div class="content">
+      <img class="logo" src="/assets/icons/codesandbox.png">
+      <h6>JS sample app</h6>
+      <div class="hover_content">
+        <p>Explore our idemeum JavaScript sample app in code sandbox.</p>
+      </div>
+    </div>
+  </div>   
+</a>
+
+<a href="" target="_blank">
+<div class="card">
+    <div class="content">
+      <img class="logo" src="/assets/icons/js-brands.svg">
+      <h6>JS SDK reference </h6>
+      <div class="hover_content">
+        <p>idemeum JavaScript SDK reference.</p>
+      </div>
+    </div>
+  </div>   
+</a>
+
+<a href="https://asset.idemeum.com/webapp/SDK/idemeum.js" target="_blank">
+<div class="card">
+    <div class="content">
+      <img class="logo" src="/assets/icons/script.svg">
+      <h6>SDK source</h6>
+      <div class="hover_content">
+        <p>CDN link for idemeum JavaScript SDK.</p>
+      </div>
+    </div>
+  </div>   
+</a>
+
+</div>
+
+<hr>
+
+
+## Integration overview
+
+!!! success "Integration steps"
+	Our goal was to make idemeum SDK simple, yet powerful and flexible so that you can address the use cases you need. idemeum JS SDK provides 4 methods to help you with your login needs: `login`, `logout`, `userClaims`, `isLoggedIn`. By leveraging these methods you can enable passwordless, secure, and private login for your application. 
 	
-	In this guide we will need to do the following steps to set up auth for our JavaScript app:
+	In this guide we will go through the following steps to implement idemeum JS SDK:
 	
 	1. Initialize idemeum SDK
-	2. Get and validate user tokens
-	2. Manage user authenitcation state
+	2. Manage authentication state with `isLoggedIn`
+	3. Log the user in and out with `login` and `logout`
+	4. Get and validate user claims with `userClaims`
 
 <hr>
 
 ## 1. Initialize idemeum SDK
 
 ### Basic HTML setup
-As a first step, let's set up a simple `index.html` page that we will be using for our application. We will set up some very simple css styles in order to format how thing are organized in our page.
 
-This HTML page will display a simple log in button. Upon clicking a button, user will be authenticated by idemeum. As a developer you can choose how to authenticate the user (**one-click**, **biometric**, or **mobile app**). Upon successful authentication JWT tokens will be returned to the application and the user will be greeted.
+Our application will display a simple log in button. Upon clicking a button, user will be authenticated by idemeum. As a developer you can choose how to authenticate the user (**one-click**, **biometric**, or **mobile app**). Upon successful authentication JWT tokens will be returned to the application and the user will be greeted.
+
+As a first step, let's set up a simple `index.html` page that we will be using for our application. We will set up some very simple css styles in order to format how things are organized in our page.
+
+
 
 ```html
 
@@ -38,6 +87,25 @@ This HTML page will display a simple log in button. Upon clicking a button, user
 
 ```
 
+```css
+
+/* our css style sheet that we save in styles.css and then import in out index page */
+
+body {
+  font-family: sans-serif;
+}
+
+#initial {
+  align-self: center;
+  justify-self: center;
+  background-color: #eee;
+  text-align: center;
+  width: 300px;
+  padding: 27px 18px;
+}
+
+```
+
 ### Import idemeum JS SDK
 
 We can now import idemeum JavaScript SDK. For this guide we will simply import the script from idemeum CDN. 
@@ -50,48 +118,87 @@ We can now import idemeum JavaScript SDK. For this guide we will simply import t
 
 ### Initialize idemeum SDK
 
-We can now initialize idemeum SDK instance. 
+We can now initialize idemeum SDK instance. Do not forget to use your `clientId` that you obtained from idemeum developer portal. 
 
-```JavaScript hl_lines="4"
+```JavaScript hl_lines="3"
 
-      // Sample to initialize idemeum JS SDK
-      var oidc;
-      var idemeum = new IdemeumManager({
-        clientId: "00000000-0000-0000-0000-000000000000", // 👈 Replace clientId with the the one you get from idemeum developer portal
-
-        // OnSuccess of the login, this function will be executed
-        onSuccess: function (successResponse) {
-          // Your application will receive ID and Access tokens from idemeum
-          oidc = successResponse.oidc;
-          // getUserClaims validates the oidc token and fetches the user approved claims
-          renderUserClaims();
-        },
-        onError: function (errorResponse) {
-          // If there is an error you can process it here
-        }
-      });
+      var idemeum = new IdemeumManager(
+        // 👇 Replace clientId with the the one you get from idemeum developer portal
+        (clientId = "00000000-0000-0000-0000-000000000000")
+      );
 
 ```
 
-## 2. Get and validate tokens
+## 2. Manage user authentication state
+
+idemeum SDK helps you manage the authentication state of the user, so that you can determine if the user is logged in or not and then take actions depending on the outcome. idemeum `isLoggedIn` returns Boolean value to identify the user authentication state. 
+
+* If the user is logged in, we will greet the user and display user claims.
+* In case the user is not logged in, we will not show any content and will simply display the `login` button. 
+
+As you can see in the code below we are simply using `login` method for button `onclick` event. 
+
+```JavaScript
+
+      function isUserLoggedIn() {
+        // Process the user logged-in state. We will create log out button and gated content.
+        idemeum.isLoggedIn().then(
+          function (data) {
+            //  Display user claims if the user is logged in
+            renderUserClaims();
+          },
+          function (errorData) {
+			// Display the login button if the user is NOT logged in
+            html = `<button id="btn-login" onclick="login()">Log in</button>`;
+            document.getElementById("initial").innerHTML = html;
+          }
+        );
+      }
+
+```
+
+And we can trigger `#!html isUserLoggedIn()` simply when the body of the document loads.
+
+
+```html
+	<body onload="isUserLoggedIn()">
+```
+
+### 3. Log the user in
+
+When user clicks `Log in` button, idemeum SDK will trigger the `login` method. Let's define what will need to happen in our application. On success our application will receive ID and Access tokens from idemeum. We will need to process and validate those tokens. In case there is failure, we can process that as well in our code. 
+
+```JavaScript
+
+      function login() {
+        idemeum.login({
+          onSuccess: function (signinResponse) {
+            // Your application will receive ID and Access tokens from idemeum
+            // renderUserClaims() (defined below) validates the oidc token and fetches the user approved claims
+            renderUserClaims();
+          },
+          onError: function (errorResponse) {
+            // If there is an error you can process it here
+          }
+        });
+      }
+
+```
+
+## 2. Get and validate user claims
 
 idemeum SDK returns ID and Access tokens upon successful user login. For token validation you can:
 
 1. Validate token yourself using any of the open source JWT token validation [libraries](https://jwt.io)
-2. Use idemeum SDK that provides built-in capability to validate tokens
+2. Use idemeum SDK that provides `userClaims` method to validate tokens
 
-In our guide we will rely on idemeum SDKs to validate tokens and extract user identity claims. 
+In our guide we will rely on idemeum SDKs to validate tokens and extract user identity claims. In the code below we will take user claims (first name, last name, and email), and we will display these claims when the user is logged in. 
 
-Let's set up a function `#!JavaScript renderUserClaims()` to render user claims. We will take ID and Access tokens and validate them using `#!JavaScript getUserClaims()` by passing OIDC token as an input value. 
-
-We will then create HTML to display to the user when she is logged in along with a `Logout` button. 
-
-
-```JavaScript hl_lines="3"
+```JavaScript
 
       function renderUserClaims() {
         idemeum
-          .getUserClaims(oidc)
+          .userClaims()
           .then(function (userClaimsResponse) {
             //fetch user approved claims from OIDC token
             htmlStart = `<div>
@@ -107,49 +214,26 @@ We will then create HTML to display to the user when she is logged in along with
               "<b><h3 style='color:Tomato;'>Email:" +
               userClaimsResponse.email;
 
-            htmlEnd = `      
+            htmlEnd = `
                     </pre>
                     </div>
-                    <button id="btn-logout" onclick="idemeum.logout()">Log out</button>`;
+                    <button id="btn-logout" onclick="idemeum.logout();isUserLoggedIn();">Log out</button>`;
             document.getElementById("initial").innerHTML =
               htmlStart + htmlProfile + htmlEnd;
           })
-          .catch(function (errorResponse) {});
+          .catch(function (errorResponse) {
+            // If there is an error you can process it here
+          });
       }
 
 ```
 
-## 3. Manage user authentication state
+We are done with our simple SPA application! Check the full working code example below.
 
-Now we can create code to manage user authentication state. We need to determine if the user is logged in, and then define what content to render. We will also need to have the capability to log the users out. 
-
-```JavaScript
-
-      // Sample to evaluate login state of the user
-      function isUserLoggedIn() {
-        // Process the user logged-in state. We will create log out button and gated content.
-        if (idemeum.isUserLoggedIn()) {
-          //  Display user claims
-          renderUserClaims();
-        } else {
-          html = `<button id="btn-login" onclick="idemeum.signin()">Log in</button>`;
-          document.getElementById("initial").innerHTML = html;
-        }
-      }
-
-```
-
-And we can trigger `#!html isUserLoggedIn()` simply when the body of the document loads.
-
-
-```html
-	<body onload="isUserLoggedIn()">
-```
+<hr>
 
 
 ## :material-file-code: Full working example
-
-We have completed simple idemeum JavaScript SDK integration with our single-page application.
 
 Here is the example of the full code we have discussed so far. 
 
@@ -164,25 +248,40 @@ Here is the example of the full code we have discussed so far.
 	    <script src="https://asset.idemeum.com/webapp/SDK/idemeum.js"></script>
 	    <script>
 	      // Sample to initialize idemeum JS SDK
-	      var oidc;
-	      var idemeum = new IdemeumManager({
-	        clientId: "00000000-0000-0000-0000-000000000000", // 👈 Replace clientId with the the one you get from idemeum developer portal
-
-	        // OnSuccess of the login, this function will be executed
-	        onSuccess: function (successResponse) {
-	          // Your application will receive ID and Access tokens from idemeum
-	          oidc = successResponse.oidc;
-	          // getUserClaims validates the oidc token and fetches the user approved claims
-	          renderUserClaims();
-	        },
-	        onError: function (errorResponse) {
-	          // If there is an error you can process it here
-	        }
-	      });
-
+	      var idemeum = new IdemeumManager(
+	        // 👇 Replace clientId with the the one you get from idemeum developer portal
+	        (clientId = "00000000-0000-0000-0000-000000000000")
+	      );
+	      // Sample to evaluate login state of the user
+	      function isUserLoggedIn() {
+	        // Process the user logged-in state. We will create log out button and gated content.
+	        idemeum.isLoggedIn().then(
+	          function (data) {
+	            //  Display user claims if the user is logged in
+	            renderUserClaims();
+	          },
+	          function (errorData) {
+	            // Display the login button if the user is NOT logged in
+	            html = `<button id="btn-login" onclick="login()">Log in</button>`;
+	            document.getElementById("initial").innerHTML = html;
+	          }
+	        );
+	      }
+	      function login() {
+	        idemeum.login({
+	          onSuccess: function (signinResponse) {
+	            // Your application will receive ID and Access tokens from idemeum
+	            // renderUserClaims() (defined below) validates the oidc token and fetches the user approved claims
+	            renderUserClaims();
+	          },
+	          onError: function (errorResponse) {
+	            // If there is an error you can process it here
+	          }
+	        });
+	      }
 	      function renderUserClaims() {
 	        idemeum
-	          .getUserClaims(oidc)
+	          .userClaims()
 	          .then(function (userClaimsResponse) {
 	            //fetch user approved claims from OIDC token
 	            htmlStart = `<div>
@@ -198,26 +297,16 @@ Here is the example of the full code we have discussed so far.
 	              "<b><h3 style='color:Tomato;'>Email:" +
 	              userClaimsResponse.email;
 
-	            htmlEnd = `      
+	            htmlEnd = `
 	                    </pre>
 	                    </div>
-	                    <button id="btn-logout" onclick="idemeum.logout()">Log out</button>`;
+	                    <button id="btn-logout" onclick="idemeum.logout();isUserLoggedIn();">Log out</button>`;
 	            document.getElementById("initial").innerHTML =
 	              htmlStart + htmlProfile + htmlEnd;
 	          })
-	          .catch(function (errorResponse) {});
-	      }
-
-	      // Sample to evaluate login state of the user
-	      function isUserLoggedIn() {
-	        // Process the user logged-in state. We will create log out button and gated content.
-	        if (idemeum.isUserLoggedIn()) {
-	          //  Display user claims
-	          renderUserClaims();
-	        } else {
-	          html = `<button id="btn-login" onclick="idemeum.signin()">Log in</button>`;
-	          document.getElementById("initial").innerHTML = html;
-	        }
+	          .catch(function (errorResponse) {
+	            // If there is an error you can process it here
+	          });
 	      }
 	    </script>
 	  </head>
@@ -228,9 +317,3 @@ Here is the example of the full code we have discussed so far.
 	  </body>
 	</html>
 	```
-
-
-
-
-
-

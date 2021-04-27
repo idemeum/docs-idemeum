@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Passwordless and private digital identity platform">
+        <meta name="description" content="idemeum documentation">
       
       
       
       
-        <link rel="canonical" href="https://idemeum.com/okta/">
+        <link rel="canonical" href="https://docs.idemeum.com/okta/">
       
       <link rel="icon" href="../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
     
     
       
-        <title>Okta - idemeum</title>
+        <title>Okta - idemeum documentation</title>
       
     
     
@@ -103,7 +103,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="idemeum" class="md-header__button md-logo" aria-label="idemeum" data-md-component="logo">
+    <a href=".." title="idemeum documentation" class="md-header__button md-logo" aria-label="idemeum documentation" data-md-component="logo">
       
   <img src="../assets/logo.svg" alt="logo">
 
@@ -115,7 +115,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            idemeum
+            idemeum documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -328,12 +328,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="idemeum" class="md-nav__button md-logo" aria-label="idemeum" data-md-component="logo">
+    <a href=".." title="idemeum documentation" class="md-nav__button md-logo" aria-label="idemeum documentation" data-md-component="logo">
       
   <img src="../assets/logo.svg" alt="logo">
 
     </a>
-    idemeum
+    idemeum documentation
   </label>
   
     <div class="md-nav__source">
@@ -1150,8 +1150,9 @@
   <img alt="" src="../assets/okta/custom_attribute.png" /></li>
 <li>
 <p>Now navigate to <code>Directory</code> -&gt; <code>Profile editor</code> and then choose your Active Directory integration and click <code>Mappings</code>. Scroll all the way down to find custom attribute that we created. And now create a custom mapping for this attribute.
-  <div class="highlight"><pre><span></span><code><span class="n">toLowerCase</span><span class="p">(</span><span class="n">appuser</span><span class="p">.</span><span class="n">firstName</span><span class="p">)</span> <span class="p">+</span> <span class="s1">&#39;_&#39;</span> <span class="p">+</span> <span class="n">toLowerCase</span><span class="p">(</span><span class="n">appuser</span><span class="p">.</span><span class="n">lastName</span><span class="p">)</span> <span class="p">+</span> <span class="s1">&#39;_&#39;</span> <span class="p">+</span> <span class="n">toLowerCase</span><span class="p">(</span><span class="n">appuser</span><span class="p">.</span><span class="n">email</span><span class="p">)</span>
+  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">toLowerCase</span><span class="p">(</span><span class="n">appuser</span><span class="p">.</span><span class="n">firstName</span><span class="p">)</span> <span class="p">+</span> <span class="s1">&#39;_&#39;</span> <span class="p">+</span> <span class="n">toLowerCase</span><span class="p">(</span><span class="n">appuser</span><span class="p">.</span><span class="n">lastName</span><span class="p">)</span> <span class="p">+</span> <span class="s1">&#39;_&#39;</span> <span class="p">+</span> <span class="n">toLowerCase</span><span class="p">(</span><span class="n">appuser</span><span class="p">.</span><span class="n">email</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
   <img alt="" src="../assets/okta/attribute_mapping.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -1174,8 +1175,9 @@
 <ul>
 <li><strong>Name</strong> - assign a name to your IDP, for example <code>idemeum SAML</code></li>
 <li><strong>IDP username</strong> - create custom string for this attribute
-  <div class="highlight"><pre><span></span><code><span class="n">String</span><span class="p">.</span><span class="n">toLowerCase</span><span class="p">(</span><span class="n">idpuser</span><span class="p">.</span><span class="n">firstName</span><span class="p">)</span> <span class="p">+</span> <span class="s1">&#39;_&#39;</span> <span class="p">+</span> <span class="n">String</span><span class="p">.</span><span class="n">toLowerCase</span><span class="p">(</span><span class="n">idpuser</span><span class="p">.</span><span class="n">lastName</span><span class="p">)</span> <span class="p">+</span> <span class="s1">&#39;_&#39;</span> <span class="p">+</span> <span class="n">idpuser</span><span class="p">.</span><span class="n">email</span>
-</code></pre></div></li>
+  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">String</span><span class="p">.</span><span class="n">toLowerCase</span><span class="p">(</span><span class="n">idpuser</span><span class="p">.</span><span class="n">firstName</span><span class="p">)</span> <span class="p">+</span> <span class="s1">&#39;_&#39;</span> <span class="p">+</span> <span class="n">String</span><span class="p">.</span><span class="n">toLowerCase</span><span class="p">(</span><span class="n">idpuser</span><span class="p">.</span><span class="n">lastName</span><span class="p">)</span> <span class="p">+</span> <span class="s1">&#39;_&#39;</span> <span class="p">+</span> <span class="n">idpuser</span><span class="p">.</span><span class="n">email</span>
+</code></pre></div>
+</td></tr></table></li>
 <li><strong>Match against</strong> - choose the display name of the custom attribute your created in the previous section.</li>
 <li><strong>Account Link Policy</strong> - choose <code>Automatic</code></li>
 <li><strong>Account Link Restriction</strong> - choose <code>None</code></li>

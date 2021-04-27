@@ -1,6 +1,6 @@
-site_name: idemeum
-site_url: https://idemeum.com
-site_description: Passwordless and private digital identity platform
+site_name: idemeum documentation
+site_url: https://docs.idemeum.com
+site_description: idemeum documentation
 copyright: Copyright 2021 idemeum
 extra_css:
   - stylesheets/extra.css
@@ -50,7 +50,7 @@ markdown_extensions:
   - attr_list
   - admonition
   - pymdownx.highlight:
-      linenums: false
+      linenums: true
   - pymdownx.superfences
   - abbr
   - def_list

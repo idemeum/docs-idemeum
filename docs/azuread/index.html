@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Passwordless and private digital identity platform">
+        <meta name="description" content="idemeum documentation">
       
       
       
       
-        <link rel="canonical" href="https://idemeum.com/azuread/">
+        <link rel="canonical" href="https://docs.idemeum.com/azuread/">
       
       <link rel="icon" href="../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
     
     
       
-        <title>Azure AD (B2B) - idemeum</title>
+        <title>Azure AD (B2B) - idemeum documentation</title>
       
     
     
@@ -103,7 +103,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="idemeum" class="md-header__button md-logo" aria-label="idemeum" data-md-component="logo">
+    <a href=".." title="idemeum documentation" class="md-header__button md-logo" aria-label="idemeum documentation" data-md-component="logo">
       
   <img src="../assets/logo.svg" alt="logo">
 
@@ -115,7 +115,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            idemeum
+            idemeum documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -328,12 +328,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="idemeum" class="md-nav__button md-logo" aria-label="idemeum" data-md-component="logo">
+    <a href=".." title="idemeum documentation" class="md-nav__button md-logo" aria-label="idemeum documentation" data-md-component="logo">
       
   <img src="../assets/logo.svg" alt="logo">
 
     </a>
-    idemeum
+    idemeum documentation
   </label>
   
     <div class="md-nav__source">
@@ -1115,21 +1115,26 @@
 <ol>
 <li>Launch PowerShell on a Windows machine</li>
 <li>Install <a href="https://docs.microsoft.com/en-us/powershell/module/msonline/?view=azureadps-1.0">MSOnline PowerShell module</a> if you have not already
-  <div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">MSOnline</span>
-</code></pre></div></li>
-<li>Connect to MSOnline service. You will need to authenticate with your Azure AD Portal admin credentials
-  <div class="highlight"><pre><span></span><code><span class="nb">Connect-MsolService</span>
-</code></pre></div></li>
-<li>You can check your existing domains and their federation settings
-  <div class="highlight"><pre><span></span><code><span class="nb">Get-MsolDomain</span>
+  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">MSOnline</span>
 </code></pre></div>
+</td></tr></table></li>
+<li>Connect to MSOnline service. You will need to authenticate with your Azure AD Portal admin credentials
+  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">Connect-MsolService</span>
+</code></pre></div>
+</td></tr></table></li>
+<li>You can check your existing domains and their federation settings
+  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">Get-MsolDomain</span>
+</code></pre></div>
+</td></tr></table>
   <img alt="" src="../assets/azuread/checkdomain.png" /></li>
 <li>Check your current domain federation settings. If the current setting is <code>federated</code>, you will need to first convert domain to `managed' setting
-  <div class="highlight"><pre><span></span><code><span class="nb">Get-MsolDomainFederationSettings</span>
+  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">Get-MsolDomainFederationSettings</span>
 </code></pre></div>
+</td></tr></table>
   <img alt="" src="../assets/azuread/federationsettings.png" />
-  <div class="highlight"><pre><span></span><code><span class="nb">Set-MsolDomainAuthentication</span> <span class="n">-DomainName</span> <span class="p">&lt;</span><span class="n">yourdomain</span><span class="p">&gt;</span> <span class="n">-Authentication</span> <span class="n">managed</span>
-</code></pre></div></li>
+  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">Set-MsolDomainAuthentication</span> <span class="n">-DomainName</span> <span class="p">&lt;</span><span class="n">yourdomain</span><span class="p">&gt;</span> <span class="n">-Authentication</span> <span class="n">managed</span>
+</code></pre></div>
+</td></tr></table></li>
 <li>Now you can configure your domain with federation settings. Take a look at the example below.<ul>
 <li><code>$Domain</code> - the domain that you are planning to federate with idemeum</li>
 <li><code>$BrandName</code> - the name that you will use for federation</li>
@@ -1138,7 +1143,15 @@
 <li><code>$SigningCert</code> - signing certificate to establish federation trust. We will share this certificate with you as part of onboarding.</li>
 <li><code>$IssuerUri</code> - URI that identifies idemeum as SAML issuer.</li>
 <li><code>$Protocol</code> - protocol to use for federation. In our case it is SAML
-  <div class="highlight"><pre><span></span><code><span class="nv">$Domain</span><span class="p">=</span><span class="s2">&quot;idemeumlab.com&quot;</span>
+  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">$Domain</span><span class="p">=</span><span class="s2">&quot;idemeumlab.com&quot;</span>
 <span class="nv">$BrandName</span><span class="p">=</span><span class="s2">&quot;idemeum&quot;</span>
 <span class="nv">$LogOnUrl</span><span class="p">=</span><span class="s2">&quot;https://myhospital.idemeum.com/api/saml/sso&quot;</span>
 <span class="nv">$LogOffUrl</span><span class="p">=</span><span class="s2">&quot;https://myhospital.idemeum.com/api/saml/slo&quot;</span>
@@ -1147,12 +1160,14 @@
 <span class="nv">$Protocol</span><span class="p">=</span><span class="s2">&quot;SAMLP&quot;</span>
 
 <span class="nb">Set-MsolDomainAuthentication</span> <span class="n">-DomainName</span> <span class="nv">$Domain</span> <span class="n">-FederationBrandName</span> <span class="nv">$BrandName</span> <span class="n">-Authentication</span> <span class="n">federated</span> <span class="n">-PassiveLogOnUri</span>  <span class="nv">$LogOnUrl</span> <span class="n">-SigningCertificate</span> <span class="nv">$SigningCert</span> <span class="n">-IssuerUri</span> <span class="nv">$IssuerUri</span> <span class="n">-LogOffUri</span> <span class="nv">$LogOffUrl</span> <span class="n">-PreferredAuthenticationProtocol</span> <span class="nv">$Protocol</span>
-</code></pre></div></li>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 </li>
 <li>Verify that the settings are successfully configured for your domain.
-  <div class="highlight"><pre><span></span><code><span class="nb">Get-MsolDomainFederationSettings</span> <span class="n">-DomainName</span> <span class="p">&lt;</span><span class="n">your</span> <span class="n">domain</span> <span class="n">here</span><span class="p">&gt;</span> <span class="p">|</span> <span class="nb">format-list</span> <span class="p">*</span>
+  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">Get-MsolDomainFederationSettings</span> <span class="n">-DomainName</span> <span class="p">&lt;</span><span class="n">your</span> <span class="n">domain</span> <span class="n">here</span><span class="p">&gt;</span> <span class="p">|</span> <span class="nb">format-list</span> <span class="p">*</span>
 </code></pre></div>
+</td></tr></table>
   <img alt="" src="../assets/azuread/verifysettings.png" /></li>
 </ol>
 <h3 id="3-test-user-sign-in">🧪 3. Test user sign in<a class="headerlink" href="#3-test-user-sign-in" title="Permanent link">&para;</a></h3>
