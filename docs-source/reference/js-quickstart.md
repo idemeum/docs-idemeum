@@ -20,7 +20,7 @@ This quick-start guide will help you quickly add login functionality to your Jav
 <div class="card">
     <div class="content">
       <img class="logo" src="/assets/icons/js-brands.svg">
-      <h6>JS SDK reference </h6>
+      <h6>JS SDK reference</h6>
       <div class="hover_content">
         <p>idemeum JavaScript SDK reference.</p>
       </div>
@@ -41,6 +41,7 @@ This quick-start guide will help you quickly add login functionality to your Jav
 </a>
 
 </div>
+
 
 <hr>
 

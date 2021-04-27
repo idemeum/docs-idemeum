@@ -24,7 +24,7 @@
 .card {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   cursor: pointer;
   padding: 2em 0;
   background: #FFF;
