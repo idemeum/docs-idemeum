@@ -1231,7 +1231,15 @@
 </code></pre></div>
 </td></tr></table>
 <p>And we can trigger <code class="highlight">isUserLoggedIn()</code> simply when the body of the document loads.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">body</span> <span class="na">onload</span><span class="o">=</span><span class="s">&quot;isUserLoggedIn()&quot;</span><span class="p">&gt;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">body</span>
+        <span class="na">onload</span><span class="o">=</span><span class="s">&quot;setTimeout(function () {</span>
+<span class="s">        isUserLoggedIn();</span>
+<span class="s">      }, 500);&quot;</span>
+      <span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="3-log-the-user-in">3. Log the user in<a class="headerlink" href="#3-log-the-user-in" title="Permanent link">&para;</a></h2>
@@ -1408,7 +1416,11 @@
 74
 75
 76
-77</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+77
+78
+79
+80
+81</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
@@ -1423,7 +1435,7 @@
       <span class="p">);</span>
       <span class="c1">// Sample to evaluate login state of the user</span>
       <span class="kd">function</span> <span class="nx">isUserLoggedIn</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// Process the user logged-in state. We will create log out button and gated content.</span>
+        <span class="c1">// Process the user logged-in state.</span>
         <span class="nx">idemeum</span><span class="p">.</span><span class="nx">isLoggedIn</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span>
           <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">//  Display user claims if the user is logged in</span>
@@ -1479,10 +1491,14 @@
       <span class="p">}</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">body</span> <span class="na">onload</span><span class="o">=</span><span class="s">&quot;isUserLoggedIn()&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span>
+    <span class="na">onload</span><span class="o">=</span><span class="s">&quot;setTimeout(function () {</span>
+<span class="s">    isUserLoggedIn();</span>
+<span class="s">  }, 500);&quot;</span>
+  <span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>idemeum JS authentication sample<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Welcome to Application!<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;initial&quot;</span><span class="p">&gt;</span>Loading...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;initial&quot;</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Loading...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>

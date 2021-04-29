@@ -162,7 +162,11 @@ And we can trigger `#!html isUserLoggedIn()` simply when the body of the documen
 
 
 ```html
-	<body onload="isUserLoggedIn()">
+	<body
+	    onload="setTimeout(function () {
+	    isUserLoggedIn();
+	  }, 500);"
+	  >
 ```
 
 ## 3. Log the user in
@@ -255,7 +259,7 @@ Here is the example of the full code we have discussed so far.
 	      );
 	      // Sample to evaluate login state of the user
 	      function isUserLoggedIn() {
-	        // Process the user logged-in state. We will create log out button and gated content.
+	        // Process the user logged-in state.
 	        idemeum.isLoggedIn().then(
 	          function (data) {
 	            //  Display user claims if the user is logged in
@@ -311,10 +315,15 @@ Here is the example of the full code we have discussed so far.
 	      }
 	    </script>
 	  </head>
-	  <body onload="isUserLoggedIn()">
+	  <body
+	    onload="setTimeout(function () {
+	    isUserLoggedIn();
+	  }, 500);"
+	  >
 	    <h2>idemeum JS authentication sample</h2>
 	    <h4>Welcome to Application!</h4>
-	    <div id="initial">Loading...</div>
+	    <div id="initial"><p>Loading...</p></div>
 	  </body>
 	</html>
+	
 	```
