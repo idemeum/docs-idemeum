@@ -1,8 +1,26 @@
-# Passwordless identity platform
+# Let's begin your passwordless journey
 
-**Build your auth in minutes**. 
+**idemeum is a passwordless and private identity platform.**
 
-idemeum is a digital identity platform for building passwordless, private, and secure authentication for mobile and desktop apps. Drop in SDK and forget about the hassle of dealing with auth challenges.
+Basically, it is a drop in [SDK](reference/sdkoverview/) to make your mobile and web apps passwordless. One SDK, couple hours of your time, and you can delight your users with seamless and simple login experience. 
+
+<hr>
+
+## How is idemeum different?
+
+#### Passwordless
+
+We are passionate about passwordless. That is why we built an all-in-one SDK to eliminate passwords. You choose how you wan to log your users in - with [one-click](overview/oneclick/), [biometric](overview/biometric/), or [QR-code](overview/loginapp/).
+
+#### Private
+
+Your users' data is none of our business. With client side encryption and [privacy](overview/privacy/) from ground up we enable your users to own and control their digital identity. We do not want to be yet another 3rd party sucking in your data. 
+
+#### User centric
+
+We designed idemeum to remove login friction. With features Single Sign-on across domains we want your users to not even notice that they are in fact signing up and logging in. Seeing is believing, try our [live demo](https://jsdemo.idemeum.com). 
+
+<hr>
 
 
 ## Quick links
@@ -36,39 +54,16 @@ Get started with idemeum using our quick links or navigating the menu.
   </div>    
  </a>
 
-<a href="/sso-overview/">
+<a href="overview/security/">
 <div class="card">
     <div class="content">
       <img class="logo" src="/assets/icons/login.svg">
-      <h6>Enterprise MFA</h6>
+      <h6>About security</h6>
       <div class="hover_content">
-        <p>Learn how idemeum app integrates with enterprise IDPs to enable passwordless MFA.</p>
+        <p>Learn how idemeum app secures your users' data.</p>
       </div>
     </div>
   </div>   
 </a>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

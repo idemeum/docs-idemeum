@@ -39,7 +39,6 @@ theme:
     - navigation.instant
     - navigation.sections
     - navigation.tabs
-    - navigation.expand
     - navigation.top
 
 markdown_extensions:
@@ -77,9 +76,16 @@ nav:
        - Security: overview/security.md
        - Privacy: overview/privacy.md
   - SDKs and guides:
-    - SDK overview: reference/sdkoverview.md
+    - Overview: reference/sdkoverview.md
     - Single-page app:
-       - Javascript guide: reference/js-quickstart.md
+       - JavaScript guide: reference/js-guide.md
+    - Mobile app:
+       - Android guide: reference/android-guide.md
+       - iOS guide: reference/ios-guide.md
+    - SDK reference:
+       - JavaScript: reference/js-reference.md
+       - Android: reference/android-reference.md
+       - iOS: reference/ios-reference.md
   - Integrations:
     - Enterprise SSO: 
        - Overview: sso-overview.md

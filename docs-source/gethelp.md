@@ -1,8 +1,7 @@
-# We are always here to help :thumbsup:
+# We are always here to help
 
-If you have any questions, we are always here to help. 
+Do not hesitate to reach out with any questions, and we are always looking forward to hear product feedback so that we can make idemeum better. 
 
-* You can always drop us a note at [support@idemeum.com](mailto:support@idemeum.com). 
-* Join our [:fontawesome-brands-slack: slack channel](https://join.slack.com/t/idemeum-community/shared_invite/zt-mcfu1b2e-gbLajeSILe~UhNjtmVBhpw) as well. It so much more than just questions. We will share the news product updates, and just share our knowledge about the world of identity. 
-
+* [:material-email: support@idemeum.com](mailto:support@idemeum.com) - drop us a note.
+* [:fontawesome-brands-slack: Slack channel](https://join.slack.com/t/idemeum-community/shared_invite/zt-mcfu1b2e-gbLajeSILe~UhNjtmVBhpw) - join our Slack channel. We will message new product updates and just share our knowledge about the world of identity. 
 
