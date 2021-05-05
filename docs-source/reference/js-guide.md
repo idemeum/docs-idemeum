@@ -138,16 +138,17 @@ When user clicks `Log in` button, idemeum SDK will trigger the `login` method. L
 ```JavaScript
 
       function login() {
-        idemeum.login({
-          onSuccess: function (signinResponse) {
+        idemeum
+          .login()
+          .then(function (signinResponse) {
             // Your application will receive ID and Access tokens from idemeum
             // renderUserClaims() (defined below) validates the oidc token and fetches the user approved claims
             renderUserClaims();
-          },
-          onError: function (errorResponse) {
+          })
+          .catch(function (errorResponse) {
             // If there is an error you can process it here
-          }
-        });
+            console.log(err);
+          });
       }
 
 ```
