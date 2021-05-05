@@ -75,7 +75,7 @@ We can now import idemeum JavaScript SDK. For this guide we will simply import t
 
 ```html
 
-<script src="https://asset.idemeum.com/webapp/SDK/idemeum.js"></script>
+<script src="https://asset.idemeum.com/sdk/idemeum_1.0.0.min.js"></script>
 
 ```
 
@@ -215,7 +215,7 @@ Here is the example of the full code we have discussed so far.
     <meta charset="UTF-8" />
     <title>idemeum JS SDK</title>
     <link rel="stylesheet" type="text/css" href="/src/styles.css" />
-    <script src="https://asset.idemeum.com/webapp/SDK/idemeum.js"></script>
+    <script src="https://asset.idemeum.com/sdk/idemeum_1.0.0.min.js"></script>
     <script>
       // Sample to initialize idemeum JS SDK
       var idemeum = new IdemeumManager(
@@ -225,29 +225,30 @@ Here is the example of the full code we have discussed so far.
       // Sample to evaluate login state of the user
       function isUserLoggedIn() {
         // Process the user logged-in state.
-        idemeum.isLoggedIn().then(
-          function (data) {
+        idemeum
+          .isLoggedIn()
+          .then(function (data) {
             //  Display user claims if the user is logged in
             renderUserClaims();
-          },
-          function (errorData) {
+          })
+          .catch(function (errorData) {
             // Display the login button if the user is NOT logged in
             html = `<button id="btn-login" onclick="login()">Log in</button>`;
             document.getElementById("initial").innerHTML = html;
-          }
-        );
+          });
       }
       function login() {
-        idemeum.login({
-          onSuccess: function (signinResponse) {
+        idemeum
+          .login()
+          .then(function (signinResponse) {
             // Your application will receive ID and Access tokens from idemeum
             // renderUserClaims() (defined below) validates the oidc token and fetches the user approved claims
             renderUserClaims();
-          },
-          onError: function (errorResponse) {
+          })
+          .catch(function (errorResponse) {
             // If there is an error you can process it here
-          }
-        });
+            console.log(err);
+          });
       }
       function renderUserClaims() {
         idemeum

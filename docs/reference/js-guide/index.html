@@ -1289,7 +1289,7 @@
 </td></tr></table>
 <h3 id="import-idemeum-js-sdk">Import idemeum JS SDK<a class="headerlink" href="#import-idemeum-js-sdk" title="Permanent link">&para;</a></h3>
 <p>We can now import idemeum JavaScript SDK. For this guide we will simply import the script from idemeum CDN. </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://asset.idemeum.com/webapp/SDK/idemeum.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://asset.idemeum.com/sdk/idemeum_1.0.0.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
 <h3 id="initialize-idemeum-sdk">Initialize idemeum SDK<a class="headerlink" href="#initialize-idemeum-sdk" title="Permanent link">&para;</a></h3>
@@ -1364,17 +1364,19 @@
  9
 10
 11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="kd">function</span> <span class="nx">login</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">idemeum</span><span class="p">.</span><span class="nx">login</span><span class="p">({</span>
-          <span class="nx">onSuccess</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">signinResponse</span><span class="p">)</span> <span class="p">{</span>
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="kd">function</span> <span class="nx">login</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">idemeum</span>
+          <span class="p">.</span><span class="nx">login</span><span class="p">()</span>
+          <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">signinResponse</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// Your application will receive ID and Access tokens from idemeum</span>
             <span class="c1">// renderUserClaims() (defined below) validates the oidc token and fetches the user approved claims</span>
             <span class="nx">renderUserClaims</span><span class="p">();</span>
-          <span class="p">},</span>
-          <span class="nx">onError</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">errorResponse</span><span class="p">)</span> <span class="p">{</span>
+          <span class="p">})</span>
+          <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">errorResponse</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// If there is an error you can process it here</span>
-          <span class="p">}</span>
-        <span class="p">});</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+          <span class="p">});</span>
       <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
@@ -1530,13 +1532,14 @@
 78
 79
 80
-81</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+81
+82</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>idemeum JS SDK<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/src/styles.css&quot;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://asset.idemeum.com/webapp/SDK/idemeum.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://asset.idemeum.com/sdk/idemeum_1.0.0.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
       <span class="c1">// Sample to initialize idemeum JS SDK</span>
       <span class="kd">var</span> <span class="nx">idemeum</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">IdemeumManager</span><span class="p">(</span>
@@ -1546,29 +1549,30 @@
       <span class="c1">// Sample to evaluate login state of the user</span>
       <span class="kd">function</span> <span class="nx">isUserLoggedIn</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// Process the user logged-in state.</span>
-        <span class="nx">idemeum</span><span class="p">.</span><span class="nx">isLoggedIn</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span>
-          <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">idemeum</span>
+          <span class="p">.</span><span class="nx">isLoggedIn</span><span class="p">()</span>
+          <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">//  Display user claims if the user is logged in</span>
             <span class="nx">renderUserClaims</span><span class="p">();</span>
-          <span class="p">},</span>
-          <span class="kd">function</span> <span class="p">(</span><span class="nx">errorData</span><span class="p">)</span> <span class="p">{</span>
+          <span class="p">})</span>
+          <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">errorData</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// Display the login button if the user is NOT logged in</span>
             <span class="nx">html</span> <span class="o">=</span> <span class="sb">`&lt;button id=&quot;btn-login&quot; onclick=&quot;login()&quot;&gt;Log in&lt;/button&gt;`</span><span class="p">;</span>
             <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;initial&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">html</span><span class="p">;</span>
-          <span class="p">}</span>
-        <span class="p">);</span>
+          <span class="p">});</span>
       <span class="p">}</span>
       <span class="kd">function</span> <span class="nx">login</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">idemeum</span><span class="p">.</span><span class="nx">login</span><span class="p">({</span>
-          <span class="nx">onSuccess</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">signinResponse</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">idemeum</span>
+          <span class="p">.</span><span class="nx">login</span><span class="p">()</span>
+          <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">signinResponse</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// Your application will receive ID and Access tokens from idemeum</span>
             <span class="c1">// renderUserClaims() (defined below) validates the oidc token and fetches the user approved claims</span>
             <span class="nx">renderUserClaims</span><span class="p">();</span>
-          <span class="p">},</span>
-          <span class="nx">onError</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">errorResponse</span><span class="p">)</span> <span class="p">{</span>
+          <span class="p">})</span>
+          <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">errorResponse</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// If there is an error you can process it here</span>
-          <span class="p">}</span>
-        <span class="p">});</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+          <span class="p">});</span>
       <span class="p">}</span>
       <span class="kd">function</span> <span class="nx">renderUserClaims</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">idemeum</span>
