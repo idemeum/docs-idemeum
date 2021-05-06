@@ -717,9 +717,72 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         JavaScript
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#class-reference" class="md-nav__link">
+    Class reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idemeummanager-class-reference" class="md-nav__link">
+    IdemeumManager Class Reference
+  </a>
+  
+    <nav class="md-nav" aria-label="IdemeumManager Class Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    Initialization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#member-functions" class="md-nav__link">
+    Member functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oidctoken" class="md-nav__link">
+    OIDCToken
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -999,6 +1062,55 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#class-reference" class="md-nav__link">
+    Class reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idemeummanager-class-reference" class="md-nav__link">
+    IdemeumManager Class Reference
+  </a>
+  
+    <nav class="md-nav" aria-label="IdemeumManager Class Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    Initialization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#member-functions" class="md-nav__link">
+    Member functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oidctoken" class="md-nav__link">
+    OIDCToken
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1011,6 +1123,218 @@
                 
                 
                 <h1 id="javascript-sdk-reference">JavaScript SDK reference<a class="headerlink" href="#javascript-sdk-reference" title="Permanent link">&para;</a></h1>
+<h2 id="class-reference">Class reference<a class="headerlink" href="#class-reference" title="Permanent link">&para;</a></h2>
+<ol>
+<li>IdemeumManager</li>
+<li>OIDCToken</li>
+</ol>
+<h2 id="idemeummanager-class-reference">IdemeumManager Class Reference<a class="headerlink" href="#idemeummanager-class-reference" title="Permanent link">&para;</a></h2>
+<h3 id="initialization">Initialization<a class="headerlink" href="#initialization" title="Permanent link">&para;</a></h3>
+<details class="note"><summary>IdemeumManager initialization</summary><p><strong>Constructor</strong>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">IdemeumManager(String</span> <span class="err">clientId)</span>
+</code></pre></div>
+</td></tr></table>
+<p><strong>Description</strong>: Initialize the class member for accessing the member functions.</p>
+<p><strong>Input params</strong>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">clientId:</span> <span class="err">The</span> <span class="err">clientId</span> <span class="err">of</span> <span class="err">the</span> <span class="err">SDK</span> <span class="err">procured</span> <span class="err">from</span> <span class="err">the</span> <span class="err">Developer</span> <span class="err">portal</span> <span class="err">(dev_portal_link)</span>
+</code></pre></div>
+</td></tr></table>
+<p><strong>Return</strong>: Returns the class instance initialized</p>
+<p><strong>Success response</strong>: N/A</p>
+<p><strong>Error response</strong>: N/A</p>
+</details>
+<h3 id="member-functions">Member functions<a class="headerlink" href="#member-functions" title="Permanent link">&para;</a></h3>
+<details class="note"><summary>login()</summary><p><strong>Description</strong>: Initiate the passwordless login flow</p>
+<p><strong>Return</strong>: Promise</p>
+<p><strong>Success response</strong>: OIDCToken instance</p>
+<p>Error codes: 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">Sample</span> <span class="err">response:</span> <span class="p">{</span>
+<span class="err">“code”:”code”</span>
+<span class="err">“message”:”message”</span>
+<span class="p">}</span> 
+
+<span class="err">Code:</span> <span class="mi">500</span>
+<span class="err">Message:</span> <span class="err">Server</span> <span class="err">side</span> <span class="err">error.</span> <span class="err">Please</span> <span class="err">contact</span> <span class="err">idemeum</span>
+
+<span class="err">Code:</span> <span class="mi">400</span>
+<span class="err">Message:</span> <span class="err">Biometrics</span> <span class="err">not</span> <span class="err">enabled</span> <span class="err">on</span> <span class="err">your</span> <span class="err">device</span>
+
+<span class="err">Code:</span> <span class="mi">404</span>
+<span class="err">Message:</span> <span class="err">This</span> <span class="err">browser</span> <span class="err">does</span> <span class="err">not</span> <span class="err">support</span> <span class="err">webauthn</span>
+
+<span class="err">Code:</span> <span class="mi">401</span>
+<span class="err">Message:</span> <span class="err">Invalid</span> <span class="err">token</span>
+
+<span class="err">Code:</span> <span class="mi">403</span>
+<span class="err">Message:</span> <span class="err">Invalid</span> <span class="err">CSRF</span> <span class="err">token</span> <span class="err">specified</span>
+
+<span class="err">Code:</span> <span class="mi">400</span>
+<span class="err">Message:</span> <span class="err">Device</span> <span class="err">does</span> <span class="err">not</span> <span class="err">support</span> <span class="err">the</span> <span class="err">biometric</span> <span class="err">login</span>
+
+<span class="err">Code:</span> <span class="mi">400</span>
+<span class="err">Message:</span> <span class="err">Fido</span> <span class="err">Assertion</span> <span class="err">validation</span> <span class="err">error</span>
+
+<span class="err">Code:</span> <span class="mi">401</span>
+<span class="err">Message:</span> <span class="err">User</span> <span class="err">denied</span> <span class="err">the</span> <span class="err">login</span> <span class="err">claims</span> <span class="err">consent</span>
+
+<span class="err">Code:</span> <span class="mi">400</span>
+<span class="err">Message:</span> <span class="err">User</span> <span class="err">handle</span> <span class="err">is</span> <span class="err">missing</span> <span class="err">or</span> <span class="err">empty</span> 
+
+<span class="err">Code:</span> <span class="mi">400</span>
+<span class="err">Message:</span> <span class="err">Missing</span> <span class="err">required</span> <span class="err">claims</span>
+
+<span class="err">Code:</span> <span class="mi">400</span>
+<span class="err">Message:</span> <span class="err">Attestation</span> <span class="err">validation</span> <span class="err">error</span>
+
+<span class="err">Code:</span> <span class="mi">403</span>
+<span class="err">Message:</span> <span class="err">Attempted</span> <span class="err">to</span> <span class="err">re-use</span> <span class="err">previously</span> <span class="err">completed</span> <span class="err">login</span> <span class="err">session</span>
+
+<span class="err">Code:</span> <span class="mi">400</span>
+<span class="err">Message:</span> <span class="err">Missing</span> <span class="err">finger</span> <span class="err">print</span> <span class="err">header</span>
+
+<span class="err">Code:</span> <span class="mi">400</span>
+<span class="err">Message:</span> <span class="err">Missing</span> <span class="err">CSRF</span> <span class="err">Header</span>
+
+<span class="err">Code:</span> <span class="mi">400</span>
+<span class="err">Message:</span> <span class="err">Device</span> <span class="err">fingerprint</span> <span class="err">mismatch</span>
+
+<span class="err">Code:</span> <span class="mi">400</span>
+<span class="err">Message:</span> <span class="err">Login</span> <span class="err">challenge</span> <span class="err">code</span> <span class="err">expired.</span> <span class="err">Try</span> <span class="err">again</span>
+</code></pre></div>
+</td></tr></table></p>
+</details>
+<details class="note"><summary>userClaims()</summary><p><strong>Description</strong>: Get the user claims after the login flow is completed or if the login session already exists and valid.</p>
+<p><strong>Return</strong>: Promise</p>
+<p><strong>Success response</strong>: OIDCToken instance
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">Sample</span> <span class="err">response:</span> <span class="p">{</span>
+  <span class="nt">&quot;aud&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;family_name&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;given_name&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;jti&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;sub&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<p><strong>Error response</strong>: error as JSONObject
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">Sample</span> <span class="err">response:</span> <span class="p">{</span>
+<span class="err">“code”:”code”</span>
+<span class="err">“message”:”message”</span>
+<span class="p">}</span> 
+
+<span class="err">Code:</span> <span class="mi">499</span>
+<span class="err">Message:</span> <span class="err">Operation</span> <span class="err">cancelled</span>
+
+<span class="err">Code:</span> <span class="mi">401</span>
+<span class="err">Message:</span> <span class="err">Invalid</span> <span class="err">token</span>
+
+<span class="err">Code:</span> <span class="mi">401</span>
+<span class="err">Message:</span> <span class="err">User</span> <span class="err">is</span> <span class="err">not</span> <span class="err">logged</span> <span class="err">in</span>
+</code></pre></div>
+</td></tr></table></p>
+</details>
+<details class="note"><summary>isLoggedIn()</summary><p><strong>Description</strong>: Identifies if the login session exists and is still valid.</p>
+<p><strong>Return</strong>: Promise</p>
+<p><strong>Success response</strong>: success bool value as <strong>true</strong></p>
+<p><strong>Error response</strong>: success bool value as <strong>false</strong></p>
+</details>
+<details class="note"><summary>logout()</summary><p><strong>Description</strong>: Logout of the current/existing login session.</p>
+<p><strong>Return</strong>: void</p>
+<p><strong>Success response</strong>: N/A</p>
+<p><strong>Error response</strong>: N/A</p>
+</details>
+<h2 id="oidctoken">OIDCToken<a class="headerlink" href="#oidctoken" title="Permanent link">&para;</a></h2>
+<details class="note"><summary>Public members</summary><p><strong>Public members</strong>:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">String</span> <span class="err">accessToken</span>
+<span class="err">String</span> <span class="err">idToken</span>
+<span class="err">long</span> <span class="err">expires_in</span>
+</code></pre></div>
+</td></tr></table></p>
+<p><strong>JSON</strong>:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;accessToken&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;expires_in&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nt">&quot;idToken&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+</details>
                 
               
               

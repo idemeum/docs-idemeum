@@ -161,10 +161,9 @@ private func onUserResponseReceived( response: Dictionary<String, Any>){
 
 <hr>
 
-Congratulations :congratulations: ! You completed integration with idemeum Android SDK. 
+Congratulations :congratulations: ! You completed integration with idemeum iOS SDK. 
 
 ## Questions?
 
 [Let us know](/gethelp/) if you need any help or have questions.
  
-
